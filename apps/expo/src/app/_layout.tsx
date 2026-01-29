@@ -14,12 +14,14 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerStyle: {
+            backgroundColor: "transparent",
+          },
+          headerTransparent: true,
+          headerTintColor: "#FFD700",
+          contentStyle: {
             backgroundColor: "#1a1a2e",
           },
-          headerTintColor: "#d4a853",
-          contentStyle: {
-            backgroundColor: "#14141f",
-          },
+          animation: "fade",
         }}
       />
       <StatusBar style="light" />
