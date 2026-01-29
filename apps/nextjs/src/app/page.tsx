@@ -1,45 +1,41 @@
-import { Suspense } from "react";
-
-import { HydrateClient, prefetch, trpc } from "~/trpc/server";
-import { AuthShowcase } from "./_components/auth-showcase";
-import { NumberDashboard } from "./_components/number-dashboard";
-import {
-  CreatePostForm,
-  PostCardSkeleton,
-  PostList,
-} from "./_components/posts";
+import { SideNavigation } from "./_components/side-navigation";
 
 export default function HomePage() {
-  prefetch(trpc.post.all.queryOptions());
-  prefetch(trpc.number.get.queryOptions());
-
   return (
-    <HydrateClient>
-      <main className="container h-screen py-16">
-        <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-            Create <span className="text-primary">T3</span> Turbo
-          </h1>
-          <AuthShowcase />
-
-          <NumberDashboard />
-
-          <CreatePostForm />
-          <div className="w-full max-w-2xl overflow-y-scroll">
-            <Suspense
-              fallback={
-                <div className="flex w-full flex-col gap-4">
-                  <PostCardSkeleton />
-                  <PostCardSkeleton />
-                  <PostCardSkeleton />
-                </div>
-              }
-            >
-              <PostList />
-            </Suspense>
+    <div className="flex h-screen bg-background">
+      <SideNavigation />
+      <main className="flex-1 overflow-auto">
+        <div className="p-8">
+          <div className="mb-8">
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+              Dashboard
+            </h1>
+            <p className="mt-2 text-muted-foreground">
+              Welcome to the Family Feud game management dashboard.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-lg border border-border bg-card p-6">
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Total Games
+              </h3>
+              <p className="mt-2 text-3xl font-semibold text-foreground">0</p>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-6">
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Questions
+              </h3>
+              <p className="mt-2 text-3xl font-semibold text-foreground">0</p>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-6">
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Teams
+              </h3>
+              <p className="mt-2 text-3xl font-semibold text-foreground">0</p>
+            </div>
           </div>
         </div>
       </main>
-    </HydrateClient>
+    </div>
   );
 }
