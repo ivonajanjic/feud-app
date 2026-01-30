@@ -3,9 +3,9 @@
  * In-memory state manager for Family Feud Go
  */
 
-// Wedge configuration for the 12-wedge spin wheel
-// 4 Trivia wedges (33%) + 8 Coin wedges (67%)
-// Vibrant casino-style colors
+// Wedge configuration for the 16-wedge spin wheel
+// Alternating pattern: white wedge with coins, colored wedge with trivia
+// 8 Coin wedges + 8 Trivia wedges (weighted probability: 5% trivia, 95% coin)
 export interface WedgeConfig {
   id: number;
   type: "trivia" | "coin";
@@ -15,23 +15,32 @@ export interface WedgeConfig {
   textColor: string;
 }
 
+// 16 wedges - alternating white (coin) and colored (trivia)
+// Starting from top (12 o'clock), going clockwise
 export const WEDGE_CONFIG: WedgeConfig[] = [
-  { id: 0, type: "coin", value: 10, label: "10", color: "#FF6B6B", textColor: "#FFFFFF" },
-  { id: 1, type: "coin", value: 25, label: "25", color: "#4ECDC4", textColor: "#FFFFFF" },
-  { id: 2, type: "trivia", value: 0, label: "TRIVIA", color: "#9B59B6", textColor: "#FFFFFF" },
-  { id: 3, type: "coin", value: 50, label: "50", color: "#F39C12", textColor: "#FFFFFF" },
-  { id: 4, type: "coin", value: 10, label: "10", color: "#3498DB", textColor: "#FFFFFF" },
-  { id: 5, type: "trivia", value: 0, label: "TRIVIA", color: "#9B59B6", textColor: "#FFFFFF" },
-  { id: 6, type: "coin", value: 100, label: "100", color: "#E74C3C", textColor: "#FFFFFF" },
-  { id: 7, type: "coin", value: 25, label: "25", color: "#2ECC71", textColor: "#FFFFFF" },
-  { id: 8, type: "trivia", value: 0, label: "TRIVIA", color: "#9B59B6", textColor: "#FFFFFF" },
-  { id: 9, type: "coin", value: 50, label: "50", color: "#1ABC9C", textColor: "#FFFFFF" },
-  { id: 10, type: "coin", value: 10, label: "10", color: "#E67E22", textColor: "#FFFFFF" },
-  { id: 11, type: "trivia", value: 0, label: "TRIVIA", color: "#9B59B6", textColor: "#FFFFFF" },
+  { id: 0, type: "coin", value: 25, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 1, type: "trivia", value: 0, label: "?", color: "#5DADE2", textColor: "#FFFFFF" },
+  { id: 2, type: "coin", value: 50, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 3, type: "trivia", value: 0, label: "?", color: "#48C9B0", textColor: "#FFFFFF" },
+  { id: 4, type: "coin", value: 10, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 5, type: "trivia", value: 0, label: "?", color: "#5B7FD9", textColor: "#FFFFFF" },
+  { id: 6, type: "coin", value: 100, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 7, type: "trivia", value: 0, label: "?", color: "#7B68EE", textColor: "#FFFFFF" },
+  { id: 8, type: "coin", value: 25, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 9, type: "trivia", value: 0, label: "?", color: "#9B59B6", textColor: "#FFFFFF" },
+  { id: 10, type: "coin", value: 50, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 11, type: "trivia", value: 0, label: "?", color: "#A569BD", textColor: "#FFFFFF" },
+  { id: 12, type: "coin", value: 10, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 13, type: "trivia", value: 0, label: "?", color: "#8E7CC3", textColor: "#FFFFFF" },
+  { id: 14, type: "coin", value: 100, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 15, type: "trivia", value: 0, label: "?", color: "#5DADE2", textColor: "#FFFFFF" },
 ];
 
-// Angle per wedge (360 / 12 = 30 degrees)
-export const WEDGE_ANGLE = 30;
+// Number of wedges
+export const NUM_WEDGES = 16;
+
+// Angle per wedge (360 / 16 = 22.5 degrees)
+export const WEDGE_ANGLE = 360 / NUM_WEDGES;
 
 // Game state interface
 export interface GameState {
@@ -115,13 +124,25 @@ export function setLastWedgeResult(wedge: WedgeConfig | null): void {
 }
 
 // Calculate which wedge the wheel landed on based on rotation angle
+// The wheel image has wedge 0 at the top center
 export function getWedgeFromRotation(rotation: number): WedgeConfig {
   // Normalize rotation to 0-360
   const normalizedRotation = ((rotation % 360) + 360) % 360;
+  
   // The pointer is at the top (0 degrees), wheel rotates clockwise
-  // Calculate which wedge is at the top
-  const wedgeIndex = Math.floor((360 - normalizedRotation) / WEDGE_ANGLE) % 12;
+  // When wheel rotates by X degrees clockwise, wedge at position (360-X) is at top
+  // Adding half wedge angle to align with wedge center
+  const effectiveAngle = (360 - normalizedRotation + WEDGE_ANGLE / 2) % 360;
+  const wedgeIndex = Math.floor(effectiveAngle / WEDGE_ANGLE) % NUM_WEDGES;
+  
   return WEDGE_CONFIG[wedgeIndex]!;
+}
+
+// Calculate the rotation needed to land on a specific wedge's center
+export function getRotationForWedgeCenter(wedgeIndex: number, fullRotations: number): number {
+  // To make wedge N appear at top, wheel needs to rotate by ((NUM_WEDGES - N) % NUM_WEDGES) * WEDGE_ANGLE
+  const wedgeCenterOffset = ((NUM_WEDGES - wedgeIndex) % NUM_WEDGES) * WEDGE_ANGLE;
+  return fullRotations * 360 + wedgeCenterOffset;
 }
 
 // Trivia state management

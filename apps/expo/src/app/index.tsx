@@ -1,18 +1,20 @@
-import React, { useState, useCallback } from "react";
-import { View, Dimensions, StatusBar } from "react-native";
+import React, { useState, useCallback, useRef } from "react";
+import { View, Pressable, Image, Dimensions, StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack, useRouter } from "expo-router";
-import { SpinWheel } from "../components/SpinWheel";
+import { SpinWheel, SpinWheelRef } from "../components/SpinWheel";
 import { CoinDisplay } from "../components/CoinDisplay";
 import { useGameStore } from "../store/use-game-store";
 import { getWedgeFromRotation } from "../store/game-store";
 
-const { height: SCREEN_HEIGHT } = Dimensions.get("window");
+const { width: SCREEN_WIDTH } = Dimensions.get("window");
+const BUTTON_WIDTH = SCREEN_WIDTH * 0.6;
 
 export default function Index() {
   const router = useRouter();
   const { state, setWheelRotation, addCoins } = useGameStore();
   const [isSpinning, setIsSpinning] = useState(false);
+  const spinWheelRef = useRef<SpinWheelRef>(null);
 
   const handleSpinStart = useCallback(() => {
     setIsSpinning(true);
@@ -36,6 +38,11 @@ export default function Index() {
     [setWheelRotation, addCoins, router]
   );
 
+  const handleSpinButtonPress = useCallback(() => {
+    if (isSpinning) return;
+    spinWheelRef.current?.spin();
+  }, [isSpinning]);
+
   return (
     <View style={{ flex: 1, backgroundColor: "#1c1c1e" }}>
       <StatusBar barStyle="light-content" />
@@ -48,28 +55,56 @@ export default function Index() {
 
         <View style={{ flex: 1 }}>
           {/* Coin Balance Display - Top Center */}
-          <View style={{ alignItems: "center", paddingTop: 40 }}>
+          <View style={{ alignItems: "center", paddingTop: 20 }}>
             <CoinDisplay balance={state.playerBalance} />
           </View>
 
           {/* Spacer */}
           <View style={{ flex: 1 }} />
 
-          {/* Spin Wheel - Bottom Half */}
+          {/* Spin Wheel - Center */}
           <View
             style={{
-              height: SCREEN_HEIGHT * 0.55,
               alignItems: "center",
-              justifyContent: "flex-end",
-              paddingBottom: 20,
+              justifyContent: "center",
             }}
           >
             <SpinWheel
+              ref={spinWheelRef}
               currentRotation={state.currentWheelRotation}
               isSpinning={isSpinning}
               onSpinComplete={handleSpinComplete}
               onSpinStart={handleSpinStart}
             />
+          </View>
+
+          {/* Spacer */}
+          <View style={{ flex: 0.5 }} />
+
+          {/* Spin Button - Below Wheel */}
+          <View
+            style={{
+              alignItems: "center",
+              paddingBottom: 40,
+            }}
+          >
+            <Pressable
+              onPress={handleSpinButtonPress}
+              disabled={isSpinning}
+              style={({ pressed }) => ({
+                opacity: isSpinning ? 0.7 : pressed ? 0.9 : 1,
+                transform: [{ scale: pressed && !isSpinning ? 0.97 : 1 }],
+              })}
+            >
+              <Image
+                source={require("../../assets/spin-button.png")}
+                style={{
+                  width: BUTTON_WIDTH,
+                  height: BUTTON_WIDTH * 0.35,
+                }}
+                resizeMode="contain"
+              />
+            </Pressable>
           </View>
         </View>
       </SafeAreaView>
