@@ -8,32 +8,35 @@
 // 8 Coin wedges + 8 Survey wedges (weighted probability: 5% survey, 95% coin)
 export interface WedgeConfig {
   id: number;
-  type: "survey" | "coin";
-  value: number; // coin value (0 for survey)
+  type: "survey" | "coin" | "steal";
+  value: number; // coin value (0 for survey/steal)
   label: string;
   color: string;
   textColor: string;
 }
 
-// 16 wedges - alternating white (coin) and colored (survey)
-// Starting from top (12 o'clock), going clockwise
+// 16 wedges - matching the wheel asset layout
+// Wedges numbered counter-clockwise from 12 o'clock
+// Coins ($): 0, 1, 2, 4, 7, 9, 12, 15
+// Diamonds (steal): 6, 10, 14
+// Question marks (survey): 3, 5, 8, 11, 13
 export const WEDGE_CONFIG: WedgeConfig[] = [
   { id: 0, type: "coin", value: 25, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 1, type: "survey", value: 0, label: "?", color: "#5DADE2", textColor: "#FFFFFF" },
-  { id: 2, type: "coin", value: 50, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 3, type: "survey", value: 0, label: "?", color: "#48C9B0", textColor: "#FFFFFF" },
-  { id: 4, type: "coin", value: 10, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 5, type: "survey", value: 0, label: "?", color: "#5B7FD9", textColor: "#FFFFFF" },
-  { id: 6, type: "coin", value: 100, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 7, type: "survey", value: 0, label: "?", color: "#7B68EE", textColor: "#FFFFFF" },
-  { id: 8, type: "coin", value: 25, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 9, type: "survey", value: 0, label: "?", color: "#9B59B6", textColor: "#FFFFFF" },
-  { id: 10, type: "coin", value: 50, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 11, type: "survey", value: 0, label: "?", color: "#A569BD", textColor: "#FFFFFF" },
+  { id: 1, type: "coin", value: 50, label: "$", color: "#5DADE2", textColor: "#000000" },
+  { id: 2, type: "coin", value: 10, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 3, type: "survey", value: 0, label: "?", color: "#8E7CC3", textColor: "#FFFFFF" },
+  { id: 4, type: "coin", value: 100, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 5, type: "survey", value: 0, label: "?", color: "#A569BD", textColor: "#FFFFFF" },
+  { id: 6, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
+  { id: 7, type: "coin", value: 25, label: "$", color: "#9B59B6", textColor: "#000000" },
+  { id: 8, type: "survey", value: 0, label: "?", color: "#FFFFFF", textColor: "#FFFFFF" },
+  { id: 9, type: "coin", value: 50, label: "$", color: "#7B68EE", textColor: "#000000" },
+  { id: 10, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
+  { id: 11, type: "survey", value: 0, label: "?", color: "#5B7FD9", textColor: "#FFFFFF" },
   { id: 12, type: "coin", value: 10, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 13, type: "survey", value: 0, label: "?", color: "#8E7CC3", textColor: "#FFFFFF" },
-  { id: 14, type: "coin", value: 100, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 15, type: "survey", value: 0, label: "?", color: "#5DADE2", textColor: "#FFFFFF" },
+  { id: 13, type: "survey", value: 0, label: "?", color: "#48C9B0", textColor: "#FFFFFF" },
+  { id: 14, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
+  { id: 15, type: "coin", value: 100, label: "$", color: "#5DADE2", textColor: "#000000" },
 ];
 
 // Number of wedges
@@ -47,6 +50,10 @@ export const SURVEY_MAX_STRIKES = 3;
 export const SURVEY_FIRST_TRY_BONUS = 50;
 export const SURVEY_TIME_SECONDS = 60;
 
+// Survey Steal constants
+export const STEAL_TIME_SECONDS = 20;
+export const STEAL_MULTIPLIER = 2;
+
 // Game state interface
 export interface GameState {
   playerBalance: number;
@@ -59,6 +66,10 @@ export interface GameState {
   surveyTotalPoints: number;
   surveyFirstClickMade: boolean;
   surveyGotFirstTryBonus: boolean;
+  // Survey Steal state
+  stealRevealedIndices: number[]; // indices (0-4) that have been revealed
+  stealTotalPoints: number;
+  stealFailed: boolean;
 }
 
 // Initial state
@@ -72,6 +83,9 @@ const initialState: GameState = {
   surveyTotalPoints: 0,
   surveyFirstClickMade: false,
   surveyGotFirstTryBonus: false,
+  stealRevealedIndices: [],
+  stealTotalPoints: 0,
+  stealFailed: false,
 };
 
 // In-memory state (singleton pattern)
@@ -214,6 +228,57 @@ export function recordSurveyAnswer(
 export function finishSurveyRound(): number {
   // Apply Zero Reward Floor: Final Coins = Max(0, total_points)
   const coinsEarned = Math.max(0, gameState.surveyTotalPoints);
+  if (coinsEarned > 0) {
+    addCoins(coinsEarned);
+  }
+  return coinsEarned;
+}
+
+// Survey Steal state management
+export function startStealRound(preFilledIndices: number[], preFilledPoints: number): void {
+  gameState = {
+    ...gameState,
+    stealRevealedIndices: [...preFilledIndices],
+    stealTotalPoints: preFilledPoints,
+    stealFailed: false,
+  };
+  notifyListeners();
+}
+
+export function recordStealAnswer(
+  isCorrect: boolean,
+  points: number,
+  answerIndex: number
+): void {
+  if (isCorrect) {
+    // Add points and reveal the index
+    const newRevealedIndices = [...gameState.stealRevealedIndices, answerIndex];
+    const newTotalPoints = gameState.stealTotalPoints + points;
+
+    gameState = {
+      ...gameState,
+      stealRevealedIndices: newRevealedIndices,
+      stealTotalPoints: newTotalPoints,
+    };
+  } else {
+    // Incorrect answer - mark as failed
+    gameState = {
+      ...gameState,
+      stealFailed: true,
+    };
+  }
+
+  notifyListeners();
+}
+
+export function finishStealRound(): number {
+  // If failed, return 0 points
+  if (gameState.stealFailed) {
+    return 0;
+  }
+
+  // Apply 2x multiplier for successful steal
+  const coinsEarned = gameState.stealTotalPoints * STEAL_MULTIPLIER;
   if (coinsEarned > 0) {
     addCoins(coinsEarned);
   }

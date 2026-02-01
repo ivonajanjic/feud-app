@@ -13,6 +13,9 @@ import {
   startSurveyRound,
   recordSurveyAnswer,
   finishSurveyRound,
+  startStealRound,
+  recordStealAnswer,
+  finishStealRound,
   resetGameState,
   type WedgeConfig,
 } from "./game-store";
@@ -49,6 +52,17 @@ export function useGameStore() {
       []
     ),
     finishSurveyRound: useCallback(() => finishSurveyRound(), []),
+    startStealRound: useCallback(
+      (preFilledIndices: number[], preFilledPoints: number) =>
+        startStealRound(preFilledIndices, preFilledPoints),
+      []
+    ),
+    recordStealAnswer: useCallback(
+      (isCorrect: boolean, points: number, answerIndex: number) =>
+        recordStealAnswer(isCorrect, points, answerIndex),
+      []
+    ),
+    finishStealRound: useCallback(() => finishStealRound(), []),
     resetGameState: useCallback(() => resetGameState(), []),
   };
 

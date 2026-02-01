@@ -1,0 +1,62 @@
+[
+  {
+    "question": "We asked 100 people to name an occasion for which people return to their hometown.",
+    "all_answers": [
+      { "text": "Christmas", "points": 35 },
+      { "text": "Wedding", "points": 25 },
+      { "text": "Funeral", "points": 20 },
+      { "text": "Reunion", "points": 12 },
+      { "text": "Thanksgiving", "points": 8 }
+    ],
+    "pre_filled_indices": [0, 1],
+    "distractors": ["War", "Nostalgia", "Birthday", "Yearning", "Graduation"]
+  },
+  {
+    "question": "We asked 100 people to name something you might find in a detective's office.",
+    "all_answers": [
+      { "text": "Magnifying Glass", "points": 32 },
+      { "text": "Case Files", "points": 28 },
+      { "text": "Desk", "points": 18 },
+      { "text": "Trench Coat", "points": 14 },
+      { "text": "Coffee Mug", "points": 8 }
+    ],
+    "pre_filled_indices": [0, 1, 2],
+    "distractors": ["Surfboard", "Yoga Mat", "Guitar", "Telescope", "Fishing Rod"]
+  },
+  {
+    "question": "We asked 100 people to name a reason someone might be nervous.",
+    "all_answers": [
+      { "text": "Job Interview", "points": 38 },
+      { "text": "First Date", "points": 26 },
+      { "text": "Public Speaking", "points": 18 },
+      { "text": "Exam", "points": 12 },
+      { "text": "Meeting In-Laws", "points": 6 }
+    ],
+    "pre_filled_indices": [0, 2],
+    "distractors": ["Sleeping", "Eating Lunch", "Watching TV", "Walking Dog", "Reading Book"]
+  },
+  {
+    "question": "We asked 100 people to name something people do to relax after work.",
+    "all_answers": [
+      { "text": "Watch TV", "points": 36 },
+      { "text": "Exercise", "points": 24 },
+      { "text": "Take a Bath", "points": 18 },
+      { "text": "Read", "points": 14 },
+      { "text": "Nap", "points": 8 }
+    ],
+    "pre_filled_indices": [0, 1, 3],
+    "distractors": ["Go to Work", "Do Taxes", "Clean Gutters", "Mow Lawn", "Attend Meeting"]
+  },
+  {
+    "question": "We asked 100 people to name something you might see at a magic show.",
+    "all_answers": [
+      { "text": "Rabbit", "points": 34 },
+      { "text": "Cards", "points": 28 },
+      { "text": "Top Hat", "points": 18 },
+      { "text": "Wand", "points": 12 },
+      { "text": "Assistant", "points": 8 }
+    ],
+    "pre_filled_indices": [1, 2],
+    "distractors": ["Basketball", "Laptop", "Toolbox", "Vacuum", "Lawn Mower"]
+  }
+]

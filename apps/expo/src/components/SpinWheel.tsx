@@ -12,8 +12,10 @@ import { NUM_WEDGES, WEDGE_ANGLE, WEDGE_CONFIG } from "../store/game-store";
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 const WHEEL_SIZE = SCREEN_WIDTH * 0.85;
 
-// Probability of landing on a survey wedge (5%)
-const SURVEY_PROBABILITY = 0.05;
+// Probability of landing on different wedge types
+const SURVEY_PROBABILITY = 0.05; // 5% for survey
+const STEAL_PROBABILITY = 0.02; // 2% for steal
+// Remaining 93% for coin wedges
 
 interface SpinWheelProps {
   currentRotation: number;
@@ -78,15 +80,31 @@ export const SpinWheel = forwardRef<SpinWheelRef, SpinWheelProps>(
       const fullRotations = 4 + Math.random() * 2;
 
       // Use weighted probability to select wedge type
-      // 5% chance of survey, 95% chance of coin
-      const isSurvey = Math.random() < SURVEY_PROBABILITY;
+      // 2% steal, 5% survey, 93% coin
+      const random = Math.random();
+      let selectedType: "steal" | "survey" | "coin";
+      if (random < STEAL_PROBABILITY) {
+        selectedType = "steal";
+      } else if (random < STEAL_PROBABILITY + SURVEY_PROBABILITY) {
+        selectedType = "survey";
+      } else {
+        selectedType = "coin";
+      }
       
       // Get all wedge indices for the selected type
+      const stealWedges = WEDGE_CONFIG.filter(w => w.type === "steal").map(w => w.id);
       const surveyWedges = WEDGE_CONFIG.filter(w => w.type === "survey").map(w => w.id);
       const coinWedges = WEDGE_CONFIG.filter(w => w.type === "coin").map(w => w.id);
       
       // Pick a random wedge from the selected type
-      const eligibleWedges = isSurvey ? surveyWedges : coinWedges;
+      let eligibleWedges: number[];
+      if (selectedType === "steal") {
+        eligibleWedges = stealWedges;
+      } else if (selectedType === "survey") {
+        eligibleWedges = surveyWedges;
+      } else {
+        eligibleWedges = coinWedges;
+      }
       const targetWedgeIndex = eligibleWedges[Math.floor(Math.random() * eligibleWedges.length)]!;
 
       // Calculate the rotation to land on that wedge's center
