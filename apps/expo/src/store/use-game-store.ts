@@ -16,6 +16,8 @@ import {
   startStealRound,
   recordStealAnswer,
   finishStealRound,
+  startDestroyRound,
+  finishDestroyRound,
   resetGameState,
   type WedgeConfig,
 } from "./game-store";
@@ -63,6 +65,8 @@ export function useGameStore() {
       []
     ),
     finishStealRound: useCallback(() => finishStealRound(), []),
+    startDestroyRound: useCallback(() => startDestroyRound(), []),
+    finishDestroyRound: useCallback((coins: number) => finishDestroyRound(coins), []),
     resetGameState: useCallback(() => resetGameState(), []),
   };
 

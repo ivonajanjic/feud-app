@@ -4,39 +4,47 @@
  */
 
 // Wedge configuration for the 16-wedge spin wheel
-// Alternating pattern: white wedge with coins, colored wedge with survey
-// 8 Coin wedges + 8 Survey wedges (weighted probability: 5% survey, 95% coin)
+// Uses weighted probability system (not based on wedge count)
+// 5 Coin + 5 Survey Says + 3 Destroy + 3 Survey Steal wedges
+// Probability: 60% coin, 15% destroy, 15% survey, 10% steal
 export interface WedgeConfig {
   id: number;
-  type: "survey" | "coin" | "steal";
-  value: number; // coin value (0 for survey/steal)
+  type: "survey" | "coin" | "steal" | "destroy";
+  value: number; // coin value (0 for survey/steal/destroy)
   label: string;
   color: string;
   textColor: string;
 }
 
-// 16 wedges - matching the wheel asset layout
+// 16 wedges - matching the wheel asset layout (from routing.md)
 // Wedges numbered counter-clockwise from 12 o'clock
-// Coins ($): 0, 1, 2, 4, 7, 9, 12, 15
-// Diamonds (steal): 6, 10, 14
-// Question marks (survey): 3, 5, 8, 11, 13
+// Coins ($): 5 wedges - values $50-$200
+// Survey Says (?): 5 wedges
+// Destroy: 3 wedges
+// Survey Steal (Diamond): 3 wedges
+//
+// Weighted Probability (ignores wedge count):
+// - Coins: 60%
+// - Destroy: 15%
+// - Survey Says: 15%
+// - Survey Steal: 10%
 export const WEDGE_CONFIG: WedgeConfig[] = [
-  { id: 0, type: "coin", value: 25, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 1, type: "coin", value: 50, label: "$", color: "#5DADE2", textColor: "#000000" },
-  { id: 2, type: "coin", value: 10, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 3, type: "survey", value: 0, label: "?", color: "#8E7CC3", textColor: "#FFFFFF" },
-  { id: 4, type: "coin", value: 100, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 5, type: "survey", value: 0, label: "?", color: "#A569BD", textColor: "#FFFFFF" },
-  { id: 6, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
-  { id: 7, type: "coin", value: 25, label: "$", color: "#9B59B6", textColor: "#000000" },
-  { id: 8, type: "survey", value: 0, label: "?", color: "#FFFFFF", textColor: "#FFFFFF" },
-  { id: 9, type: "coin", value: 50, label: "$", color: "#7B68EE", textColor: "#000000" },
-  { id: 10, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
+  { id: 0, type: "coin", value: 50, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 1, type: "steal", value: 0, label: "◆", color: "#5DADE2", textColor: "#FFFFFF" },
+  { id: 2, type: "survey", value: 0, label: "?", color: "#FFFFFF", textColor: "#000000" },
+  { id: 3, type: "coin", value: 100, label: "$", color: "#8E7CC3", textColor: "#000000" },
+  { id: 4, type: "survey", value: 0, label: "?", color: "#FFFFFF", textColor: "#000000" },
+  { id: 5, type: "destroy", value: 0, label: "DESTROY", color: "#A569BD", textColor: "#FFFFFF" },
+  { id: 6, type: "coin", value: 150, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 7, type: "survey", value: 0, label: "?", color: "#9B59B6", textColor: "#FFFFFF" },
+  { id: 8, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
+  { id: 9, type: "coin", value: 75, label: "$", color: "#7B68EE", textColor: "#000000" },
+  { id: 10, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
   { id: 11, type: "survey", value: 0, label: "?", color: "#5B7FD9", textColor: "#FFFFFF" },
-  { id: 12, type: "coin", value: 10, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 12, type: "coin", value: 200, label: "$", color: "#FFFFFF", textColor: "#000000" },
   { id: 13, type: "survey", value: 0, label: "?", color: "#48C9B0", textColor: "#FFFFFF" },
-  { id: 14, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
-  { id: 15, type: "coin", value: 100, label: "$", color: "#5DADE2", textColor: "#000000" },
+  { id: 14, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
+  { id: 15, type: "steal", value: 0, label: "◆", color: "#5DADE2", textColor: "#FFFFFF" },
 ];
 
 // Number of wedges
@@ -54,6 +62,11 @@ export const SURVEY_TIME_SECONDS = 60;
 export const STEAL_TIME_SECONDS = 20;
 export const STEAL_MULTIPLIER = 2;
 
+// Destroy constants
+export const DESTROY_CONSOLATION_PRIZE = 10;
+export const DESTROY_MIN_REWARD = 50;
+export const DESTROY_MAX_REWARD = 200;
+
 // Game state interface
 export interface GameState {
   playerBalance: number;
@@ -70,6 +83,8 @@ export interface GameState {
   stealRevealedIndices: number[]; // indices (0-4) that have been revealed
   stealTotalPoints: number;
   stealFailed: boolean;
+  // Destroy state
+  destroyCoinsEarned: number;
 }
 
 // Initial state
@@ -86,6 +101,7 @@ const initialState: GameState = {
   stealRevealedIndices: [],
   stealTotalPoints: 0,
   stealFailed: false,
+  destroyCoinsEarned: 0,
 };
 
 // In-memory state (singleton pattern)
@@ -283,6 +299,26 @@ export function finishStealRound(): number {
     addCoins(coinsEarned);
   }
   return coinsEarned;
+}
+
+// Destroy state management
+export function startDestroyRound(): void {
+  gameState = {
+    ...gameState,
+    destroyCoinsEarned: 0,
+  };
+  notifyListeners();
+}
+
+export function finishDestroyRound(coins: number): number {
+  gameState = {
+    ...gameState,
+    destroyCoinsEarned: coins,
+  };
+  if (coins > 0) {
+    addCoins(coins);
+  }
+  return coins;
 }
 
 // Reset game state

@@ -12,10 +12,12 @@ import { NUM_WEDGES, WEDGE_ANGLE, WEDGE_CONFIG } from "../store/game-store";
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 const WHEEL_SIZE = SCREEN_WIDTH * 0.85;
 
-// Probability of landing on different wedge types
-const SURVEY_PROBABILITY = 0.05; // 5% for survey
-const STEAL_PROBABILITY = 0.02; // 2% for steal
-// Remaining 93% for coin wedges
+// Weighted probability of landing on different wedge types (from routing.md)
+// These weights override the physical wedge count distribution
+const COIN_PROBABILITY = 0.60;    // 60% for coins
+const DESTROY_PROBABILITY = 0.15; // 15% for destroy
+const SURVEY_PROBABILITY = 0.15;  // 15% for survey says
+const STEAL_PROBABILITY = 0.10;   // 10% for survey steal
 
 interface SpinWheelProps {
   currentRotation: number;
@@ -80,21 +82,24 @@ export const SpinWheel = forwardRef<SpinWheelRef, SpinWheelProps>(
       const fullRotations = 4 + Math.random() * 2;
 
       // Use weighted probability to select wedge type
-      // 2% steal, 5% survey, 93% coin
+      // 60% coin, 15% destroy, 15% survey, 10% steal
       const random = Math.random();
-      let selectedType: "steal" | "survey" | "coin";
-      if (random < STEAL_PROBABILITY) {
-        selectedType = "steal";
-      } else if (random < STEAL_PROBABILITY + SURVEY_PROBABILITY) {
+      let selectedType: "steal" | "survey" | "coin" | "destroy";
+      if (random < COIN_PROBABILITY) {
+        selectedType = "coin";
+      } else if (random < COIN_PROBABILITY + DESTROY_PROBABILITY) {
+        selectedType = "destroy";
+      } else if (random < COIN_PROBABILITY + DESTROY_PROBABILITY + SURVEY_PROBABILITY) {
         selectedType = "survey";
       } else {
-        selectedType = "coin";
+        selectedType = "steal";
       }
       
       // Get all wedge indices for the selected type
       const stealWedges = WEDGE_CONFIG.filter(w => w.type === "steal").map(w => w.id);
       const surveyWedges = WEDGE_CONFIG.filter(w => w.type === "survey").map(w => w.id);
       const coinWedges = WEDGE_CONFIG.filter(w => w.type === "coin").map(w => w.id);
+      const destroyWedges = WEDGE_CONFIG.filter(w => w.type === "destroy").map(w => w.id);
       
       // Pick a random wedge from the selected type
       let eligibleWedges: number[];
@@ -102,6 +107,8 @@ export const SpinWheel = forwardRef<SpinWheelRef, SpinWheelProps>(
         eligibleWedges = stealWedges;
       } else if (selectedType === "survey") {
         eligibleWedges = surveyWedges;
+      } else if (selectedType === "destroy") {
+        eligibleWedges = destroyWedges;
       } else {
         eligibleWedges = coinWedges;
       }

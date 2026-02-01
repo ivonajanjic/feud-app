@@ -35,6 +35,10 @@ export default function Index() {
         setTimeout(() => {
           router.push("/survey-steal");
         }, 600);
+      } else if (wedge.type === "destroy") {
+        setTimeout(() => {
+          router.push("/destroy");
+        }, 600);
       } else {
         addCoins(wedge.value);
       }

@@ -1,0 +1,58 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "owner_name": "Vishakh",
+      "objects": [
+        { "name": "Controller", "emoji": "🎮" },
+        { "name": "PC", "emoji": "🖥️" },
+        { "name": "Bed", "emoji": "🛏️" }
+      ]
+    },
+    {
+      "id": 2,
+      "owner_name": "DesignBuddy",
+      "objects": [
+        { "name": "Laptop", "emoji": "💻" },
+        { "name": "Coffee", "emoji": "☕" },
+        { "name": "Desk", "emoji": "🗄️" }
+      ]
+    },
+    {
+      "id": 3,
+      "owner_name": "Sarah",
+      "objects": [
+        { "name": "TV", "emoji": "📺" },
+        { "name": "Couch", "emoji": "🛋️" },
+        { "name": "Plant", "emoji": "🪴" }
+      ]
+    },
+    {
+      "id": 4,
+      "owner_name": "Marcus",
+      "objects": [
+        { "name": "Guitar", "emoji": "🎸" },
+        { "name": "Speakers", "emoji": "🔊" },
+        { "name": "Lamp", "emoji": "💡" }
+      ]
+    },
+    {
+      "id": 5,
+      "owner_name": "Emma",
+      "objects": [
+        { "name": "Mirror", "emoji": "🪞" },
+        { "name": "Bookshelf", "emoji": "📚" },
+        { "name": "Chair", "emoji": "🪑" }
+      ]
+    },
+    {
+      "id": 6,
+      "owner_name": "Jordan",
+      "objects": [
+        { "name": "Microwave", "emoji": "📡" },
+        { "name": "Fridge", "emoji": "🧊" },
+        { "name": "Clock", "emoji": "🕰️" }
+      ]
+    }
+  ]
+}
