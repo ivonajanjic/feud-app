@@ -52,6 +52,7 @@ export default function SurveySaysScreen() {
   const [shuffledOptions, setShuffledOptions] = useState<SurveyOption[]>([]);
   const [timeRemaining, setTimeRemaining] = useState(SURVEY_TIME_SECONDS);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isGameStarted, setIsGameStarted] = useState(false);
   const [coinsEarned, setCoinsEarned] = useState(0);
   const [disabledOptions, setDisabledOptions] = useState<Set<number>>(new Set());
   const [flashingOption, setFlashingOption] = useState<number | null>(null);
@@ -73,11 +74,13 @@ export default function SurveySaysScreen() {
     startSurveyRound();
     // Shuffle options for display
     setShuffledOptions(shuffleArray(question.options));
+    // Mark game as started after state reset
+    setIsGameStarted(true);
   }, [startSurveyRound, question]);
 
   // Timer countdown
   useEffect(() => {
-    if (isGameOver) return;
+    if (!isGameStarted || isGameOver) return;
 
     timerRef.current = setInterval(() => {
       setTimeRemaining((prev) => {
@@ -93,7 +96,7 @@ export default function SurveySaysScreen() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isGameOver]);
+  }, [isGameStarted, isGameOver]);
 
   // Handle back button
   useEffect(() => {
@@ -117,18 +120,18 @@ export default function SurveySaysScreen() {
 
   // Check if all correct answers found
   useEffect(() => {
-    if (state.surveyRevealedRanks.length === 5 && !isGameOver) {
+    if (isGameStarted && state.surveyRevealedRanks.length === 5 && !isGameOver) {
       // All 5 correct answers found - end game with delay
       setTimeout(() => endGame(), 500);
     }
-  }, [state.surveyRevealedRanks, isGameOver, endGame]);
+  }, [isGameStarted, state.surveyRevealedRanks, isGameOver, endGame]);
 
   // Check for 3 strikes
   useEffect(() => {
-    if (state.surveyStrikes >= SURVEY_MAX_STRIKES && !isGameOver) {
+    if (isGameStarted && state.surveyStrikes >= SURVEY_MAX_STRIKES && !isGameOver) {
       setTimeout(() => endGame(), 500);
     }
-  }, [state.surveyStrikes, isGameOver, endGame]);
+  }, [isGameStarted, state.surveyStrikes, isGameOver, endGame]);
 
   const handleOptionSelect = useCallback(
     (optionIndex: number) => {
