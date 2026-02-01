@@ -12,8 +12,8 @@ import { NUM_WEDGES, WEDGE_ANGLE, WEDGE_CONFIG } from "../store/game-store";
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 const WHEEL_SIZE = SCREEN_WIDTH * 0.85;
 
-// Probability of landing on a trivia wedge (5%)
-const TRIVIA_PROBABILITY = 0.05;
+// Probability of landing on a survey wedge (5%)
+const SURVEY_PROBABILITY = 0.05;
 
 interface SpinWheelProps {
   currentRotation: number;
@@ -78,15 +78,15 @@ export const SpinWheel = forwardRef<SpinWheelRef, SpinWheelProps>(
       const fullRotations = 4 + Math.random() * 2;
 
       // Use weighted probability to select wedge type
-      // 5% chance of trivia, 95% chance of coin
-      const isTrivia = Math.random() < TRIVIA_PROBABILITY;
+      // 5% chance of survey, 95% chance of coin
+      const isSurvey = Math.random() < SURVEY_PROBABILITY;
       
       // Get all wedge indices for the selected type
-      const triviaWedges = WEDGE_CONFIG.filter(w => w.type === "trivia").map(w => w.id);
+      const surveyWedges = WEDGE_CONFIG.filter(w => w.type === "survey").map(w => w.id);
       const coinWedges = WEDGE_CONFIG.filter(w => w.type === "coin").map(w => w.id);
       
       // Pick a random wedge from the selected type
-      const eligibleWedges = isTrivia ? triviaWedges : coinWedges;
+      const eligibleWedges = isSurvey ? surveyWedges : coinWedges;
       const targetWedgeIndex = eligibleWedges[Math.floor(Math.random() * eligibleWedges.length)]!;
 
       // Calculate the rotation to land on that wedge's center

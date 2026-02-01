@@ -10,9 +10,9 @@ import {
   setWheelRotation,
   setSpinning,
   setLastWedgeResult,
-  startTriviaRound,
-  recordTriviaAnswer,
-  finishTriviaRound,
+  startSurveyRound,
+  recordSurveyAnswer,
+  finishSurveyRound,
   resetGameState,
   type WedgeConfig,
 } from "./game-store";
@@ -42,12 +42,13 @@ export function useGameStore() {
       (wedge: WedgeConfig | null) => setLastWedgeResult(wedge),
       []
     ),
-    startTriviaRound: useCallback(() => startTriviaRound(), []),
-    recordTriviaAnswer: useCallback(
-      (isCorrect: boolean) => recordTriviaAnswer(isCorrect),
+    startSurveyRound: useCallback(() => startSurveyRound(), []),
+    recordSurveyAnswer: useCallback(
+      (isCorrect: boolean, points: number, rank: number, isFirstTryBonusEligible: boolean) =>
+        recordSurveyAnswer(isCorrect, points, rank, isFirstTryBonusEligible),
       []
     ),
-    finishTriviaRound: useCallback(() => finishTriviaRound(), []),
+    finishSurveyRound: useCallback(() => finishSurveyRound(), []),
     resetGameState: useCallback(() => resetGameState(), []),
   };
 

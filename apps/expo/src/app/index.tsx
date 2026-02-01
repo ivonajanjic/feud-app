@@ -27,9 +27,9 @@ export default function Index() {
 
       const wedge = getWedgeFromRotation(finalRotation);
 
-      if (wedge.type === "trivia") {
+      if (wedge.type === "survey") {
         setTimeout(() => {
-          router.push("/trivia");
+          router.push("/survey-says");
         }, 600);
       } else {
         addCoins(wedge.value);

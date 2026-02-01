@@ -1,0 +1,1263 @@
+[
+  {
+    "question_text": "We asked 100 people to name an occasion for which people return to their hometown.",
+    "options": [
+      { "text": "Christmas", "is_correct": true, "points": 45 },
+      { "text": "Wedding", "is_correct": true, "points": 30 },
+      { "text": "Funeral", "is_correct": true, "points": 15 },
+      { "text": "Reunion", "is_correct": true, "points": 7 },
+      { "text": "Birthday", "is_correct": true, "points": 3 },
+      { "text": "War", "is_correct": false, "points": 0 },
+      { "text": "Nostalgia", "is_correct": false, "points": 0 },
+      { "text": "Yearning", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find in a doctor's office.",
+    "options": [
+      { "text": "Stethoscope", "is_correct": true, "points": 40 },
+      { "text": "Magazines", "is_correct": true, "points": 25 },
+      { "text": "Scale", "is_correct": true, "points": 18 },
+      { "text": "Exam Table", "is_correct": true, "points": 12 },
+      { "text": "Tongue Depressor", "is_correct": true, "points": 5 },
+      { "text": "Swimming Pool", "is_correct": false, "points": 0 },
+      { "text": "Roller Coaster", "is_correct": false, "points": 0 },
+      { "text": "Bowling Alley", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason someone might be late to work.",
+    "options": [
+      { "text": "Traffic", "is_correct": true, "points": 42 },
+      { "text": "Overslept", "is_correct": true, "points": 30 },
+      { "text": "Car Trouble", "is_correct": true, "points": 15 },
+      { "text": "Kids", "is_correct": true, "points": 8 },
+      { "text": "Weather", "is_correct": true, "points": 5 },
+      { "text": "Aliens", "is_correct": false, "points": 0 },
+      { "text": "Time Travel", "is_correct": false, "points": 0 },
+      { "text": "Teleportation Malfunction", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something people do at a party.",
+    "options": [
+      { "text": "Dance", "is_correct": true, "points": 38 },
+      { "text": "Eat", "is_correct": true, "points": 28 },
+      { "text": "Drink", "is_correct": true, "points": 18 },
+      { "text": "Talk", "is_correct": true, "points": 10 },
+      { "text": "Play Games", "is_correct": true, "points": 6 },
+      { "text": "Sleep", "is_correct": false, "points": 0 },
+      { "text": "Do Taxes", "is_correct": false, "points": 0 },
+      { "text": "Mow Lawn", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a popular pizza topping.",
+    "options": [
+      { "text": "Pepperoni", "is_correct": true, "points": 45 },
+      { "text": "Mushrooms", "is_correct": true, "points": 22 },
+      { "text": "Sausage", "is_correct": true, "points": 16 },
+      { "text": "Peppers", "is_correct": true, "points": 10 },
+      { "text": "Onions", "is_correct": true, "points": 7 },
+      { "text": "Chocolate", "is_correct": false, "points": 0 },
+      { "text": "Ice Cream", "is_correct": false, "points": 0 },
+      { "text": "Cereal", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might forget to pack for a trip.",
+    "options": [
+      { "text": "Toothbrush", "is_correct": true, "points": 35 },
+      { "text": "Phone Charger", "is_correct": true, "points": 28 },
+      { "text": "Underwear", "is_correct": true, "points": 18 },
+      { "text": "Medication", "is_correct": true, "points": 12 },
+      { "text": "Socks", "is_correct": true, "points": 7 },
+      { "text": "House", "is_correct": false, "points": 0 },
+      { "text": "Car", "is_correct": false, "points": 0 },
+      { "text": "Kitchen Sink", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a place where people whisper.",
+    "options": [
+      { "text": "Library", "is_correct": true, "points": 40 },
+      { "text": "Church", "is_correct": true, "points": 25 },
+      { "text": "Movie Theater", "is_correct": true, "points": 18 },
+      { "text": "Hospital", "is_correct": true, "points": 10 },
+      { "text": "Classroom", "is_correct": true, "points": 7 },
+      { "text": "Concert", "is_correct": false, "points": 0 },
+      { "text": "Sports Stadium", "is_correct": false, "points": 0 },
+      { "text": "Construction Site", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find at the beach.",
+    "options": [
+      { "text": "Sand", "is_correct": true, "points": 38 },
+      { "text": "Shells", "is_correct": true, "points": 25 },
+      { "text": "Towels", "is_correct": true, "points": 18 },
+      { "text": "Umbrellas", "is_correct": true, "points": 12 },
+      { "text": "Seagulls", "is_correct": true, "points": 7 },
+      { "text": "Snow", "is_correct": false, "points": 0 },
+      { "text": "Mountains", "is_correct": false, "points": 0 },
+      { "text": "Skyscrapers", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a household chore people hate doing.",
+    "options": [
+      { "text": "Dishes", "is_correct": true, "points": 35 },
+      { "text": "Laundry", "is_correct": true, "points": 28 },
+      { "text": "Vacuuming", "is_correct": true, "points": 18 },
+      { "text": "Cleaning Bathroom", "is_correct": true, "points": 12 },
+      { "text": "Ironing", "is_correct": true, "points": 7 },
+      { "text": "Eating", "is_correct": false, "points": 0 },
+      { "text": "Sleeping", "is_correct": false, "points": 0 },
+      { "text": "Watching TV", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might see at a zoo.",
+    "options": [
+      { "text": "Lions", "is_correct": true, "points": 38 },
+      { "text": "Elephants", "is_correct": true, "points": 25 },
+      { "text": "Monkeys", "is_correct": true, "points": 18 },
+      { "text": "Giraffes", "is_correct": true, "points": 12 },
+      { "text": "Penguins", "is_correct": true, "points": 7 },
+      { "text": "Dragons", "is_correct": false, "points": 0 },
+      { "text": "Unicorns", "is_correct": false, "points": 0 },
+      { "text": "Dinosaurs", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a popular breakfast food.",
+    "options": [
+      { "text": "Eggs", "is_correct": true, "points": 40 },
+      { "text": "Bacon", "is_correct": true, "points": 28 },
+      { "text": "Cereal", "is_correct": true, "points": 16 },
+      { "text": "Pancakes", "is_correct": true, "points": 10 },
+      { "text": "Toast", "is_correct": true, "points": 6 },
+      { "text": "Steak", "is_correct": false, "points": 0 },
+      { "text": "Spaghetti", "is_correct": false, "points": 0 },
+      { "text": "Sushi", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something kids ask for at the grocery store.",
+    "options": [
+      { "text": "Candy", "is_correct": true, "points": 42 },
+      { "text": "Cereal", "is_correct": true, "points": 25 },
+      { "text": "Cookies", "is_correct": true, "points": 16 },
+      { "text": "Ice Cream", "is_correct": true, "points": 10 },
+      { "text": "Chips", "is_correct": true, "points": 7 },
+      { "text": "Vegetables", "is_correct": false, "points": 0 },
+      { "text": "Salad", "is_correct": false, "points": 0 },
+      { "text": "Broccoli", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to call in sick to work.",
+    "options": [
+      { "text": "Flu", "is_correct": true, "points": 38 },
+      { "text": "Cold", "is_correct": true, "points": 25 },
+      { "text": "Headache", "is_correct": true, "points": 18 },
+      { "text": "Stomach Bug", "is_correct": true, "points": 12 },
+      { "text": "Doctor Appointment", "is_correct": true, "points": 7 },
+      { "text": "Too Sunny", "is_correct": false, "points": 0 },
+      { "text": "New Video Game", "is_correct": false, "points": 0 },
+      { "text": "Good TV Show", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do before going to bed.",
+    "options": [
+      { "text": "Brush Teeth", "is_correct": true, "points": 40 },
+      { "text": "Watch TV", "is_correct": true, "points": 25 },
+      { "text": "Read", "is_correct": true, "points": 18 },
+      { "text": "Check Phone", "is_correct": true, "points": 10 },
+      { "text": "Set Alarm", "is_correct": true, "points": 7 },
+      { "text": "Run Marathon", "is_correct": false, "points": 0 },
+      { "text": "Go Shopping", "is_correct": false, "points": 0 },
+      { "text": "Mow Lawn", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a sport played with a ball.",
+    "options": [
+      { "text": "Football", "is_correct": true, "points": 35 },
+      { "text": "Basketball", "is_correct": true, "points": 28 },
+      { "text": "Baseball", "is_correct": true, "points": 18 },
+      { "text": "Soccer", "is_correct": true, "points": 12 },
+      { "text": "Tennis", "is_correct": true, "points": 7 },
+      { "text": "Swimming", "is_correct": false, "points": 0 },
+      { "text": "Skiing", "is_correct": false, "points": 0 },
+      { "text": "Running", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something found in a wallet.",
+    "options": [
+      { "text": "Cash", "is_correct": true, "points": 42 },
+      { "text": "Credit Cards", "is_correct": true, "points": 28 },
+      { "text": "ID", "is_correct": true, "points": 15 },
+      { "text": "Photos", "is_correct": true, "points": 10 },
+      { "text": "Receipts", "is_correct": true, "points": 5 },
+      { "text": "Laptop", "is_correct": false, "points": 0 },
+      { "text": "Sandwich", "is_correct": false, "points": 0 },
+      { "text": "Umbrella", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find in a refrigerator.",
+    "options": [
+      { "text": "Milk", "is_correct": true, "points": 38 },
+      { "text": "Eggs", "is_correct": true, "points": 25 },
+      { "text": "Butter", "is_correct": true, "points": 18 },
+      { "text": "Leftovers", "is_correct": true, "points": 12 },
+      { "text": "Vegetables", "is_correct": true, "points": 7 },
+      { "text": "Books", "is_correct": false, "points": 0 },
+      { "text": "Shoes", "is_correct": false, "points": 0 },
+      { "text": "Television", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a gift you might give a teacher.",
+    "options": [
+      { "text": "Apple", "is_correct": true, "points": 35 },
+      { "text": "Gift Card", "is_correct": true, "points": 28 },
+      { "text": "Flowers", "is_correct": true, "points": 18 },
+      { "text": "Chocolate", "is_correct": true, "points": 12 },
+      { "text": "Mug", "is_correct": true, "points": 7 },
+      { "text": "Car", "is_correct": false, "points": 0 },
+      { "text": "House", "is_correct": false, "points": 0 },
+      { "text": "Yacht", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you see in a park.",
+    "options": [
+      { "text": "Trees", "is_correct": true, "points": 38 },
+      { "text": "Benches", "is_correct": true, "points": 25 },
+      { "text": "Dogs", "is_correct": true, "points": 18 },
+      { "text": "Playground", "is_correct": true, "points": 12 },
+      { "text": "Joggers", "is_correct": true, "points": 7 },
+      { "text": "Submarines", "is_correct": false, "points": 0 },
+      { "text": "Volcanoes", "is_correct": false, "points": 0 },
+      { "text": "Glaciers", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to throw a party.",
+    "options": [
+      { "text": "Birthday", "is_correct": true, "points": 45 },
+      { "text": "Wedding", "is_correct": true, "points": 25 },
+      { "text": "Graduation", "is_correct": true, "points": 15 },
+      { "text": "Promotion", "is_correct": true, "points": 10 },
+      { "text": "New Year", "is_correct": true, "points": 5 },
+      { "text": "Monday", "is_correct": false, "points": 0 },
+      { "text": "Dentist Visit", "is_correct": false, "points": 0 },
+      { "text": "Traffic Jam", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something people collect.",
+    "options": [
+      { "text": "Stamps", "is_correct": true, "points": 35 },
+      { "text": "Coins", "is_correct": true, "points": 28 },
+      { "text": "Baseball Cards", "is_correct": true, "points": 18 },
+      { "text": "Art", "is_correct": true, "points": 12 },
+      { "text": "Figurines", "is_correct": true, "points": 7 },
+      { "text": "Dust", "is_correct": false, "points": 0 },
+      { "text": "Air", "is_correct": false, "points": 0 },
+      { "text": "Clouds", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might lose.",
+    "options": [
+      { "text": "Keys", "is_correct": true, "points": 42 },
+      { "text": "Phone", "is_correct": true, "points": 28 },
+      { "text": "Wallet", "is_correct": true, "points": 15 },
+      { "text": "Remote", "is_correct": true, "points": 10 },
+      { "text": "Glasses", "is_correct": true, "points": 5 },
+      { "text": "House", "is_correct": false, "points": 0 },
+      { "text": "Mountain", "is_correct": false, "points": 0 },
+      { "text": "Ocean", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a popular ice cream flavor.",
+    "options": [
+      { "text": "Vanilla", "is_correct": true, "points": 40 },
+      { "text": "Chocolate", "is_correct": true, "points": 30 },
+      { "text": "Strawberry", "is_correct": true, "points": 15 },
+      { "text": "Cookie Dough", "is_correct": true, "points": 10 },
+      { "text": "Mint Chip", "is_correct": true, "points": 5 },
+      { "text": "Onion", "is_correct": false, "points": 0 },
+      { "text": "Garlic", "is_correct": false, "points": 0 },
+      { "text": "Mustard", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do on a first date.",
+    "options": [
+      { "text": "Dinner", "is_correct": true, "points": 40 },
+      { "text": "Movie", "is_correct": true, "points": 28 },
+      { "text": "Coffee", "is_correct": true, "points": 15 },
+      { "text": "Walk", "is_correct": true, "points": 10 },
+      { "text": "Talk", "is_correct": true, "points": 7 },
+      { "text": "Sleep", "is_correct": false, "points": 0 },
+      { "text": "Argue", "is_correct": false, "points": 0 },
+      { "text": "Move In", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a popular holiday.",
+    "options": [
+      { "text": "Christmas", "is_correct": true, "points": 45 },
+      { "text": "Thanksgiving", "is_correct": true, "points": 25 },
+      { "text": "Easter", "is_correct": true, "points": 15 },
+      { "text": "Halloween", "is_correct": true, "points": 10 },
+      { "text": "Fourth of July", "is_correct": true, "points": 5 },
+      { "text": "Laundry Day", "is_correct": false, "points": 0 },
+      { "text": "Monday", "is_correct": false, "points": 0 },
+      { "text": "Tax Day", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something found in a classroom.",
+    "options": [
+      { "text": "Desks", "is_correct": true, "points": 38 },
+      { "text": "Chalkboard", "is_correct": true, "points": 28 },
+      { "text": "Books", "is_correct": true, "points": 16 },
+      { "text": "Teacher", "is_correct": true, "points": 12 },
+      { "text": "Clock", "is_correct": true, "points": 6 },
+      { "text": "Pool", "is_correct": false, "points": 0 },
+      { "text": "Kitchen", "is_correct": false, "points": 0 },
+      { "text": "Garage", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a common pet.",
+    "options": [
+      { "text": "Dog", "is_correct": true, "points": 45 },
+      { "text": "Cat", "is_correct": true, "points": 30 },
+      { "text": "Fish", "is_correct": true, "points": 12 },
+      { "text": "Bird", "is_correct": true, "points": 8 },
+      { "text": "Hamster", "is_correct": true, "points": 5 },
+      { "text": "Elephant", "is_correct": false, "points": 0 },
+      { "text": "Giraffe", "is_correct": false, "points": 0 },
+      { "text": "Whale", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do at the gym.",
+    "options": [
+      { "text": "Lift Weights", "is_correct": true, "points": 38 },
+      { "text": "Run", "is_correct": true, "points": 28 },
+      { "text": "Stretch", "is_correct": true, "points": 16 },
+      { "text": "Swim", "is_correct": true, "points": 12 },
+      { "text": "Take Class", "is_correct": true, "points": 6 },
+      { "text": "Eat Pizza", "is_correct": false, "points": 0 },
+      { "text": "Sleep", "is_correct": false, "points": 0 },
+      { "text": "Watch TV", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find in a bathroom.",
+    "options": [
+      { "text": "Toilet", "is_correct": true, "points": 40 },
+      { "text": "Sink", "is_correct": true, "points": 28 },
+      { "text": "Shower", "is_correct": true, "points": 16 },
+      { "text": "Towels", "is_correct": true, "points": 10 },
+      { "text": "Mirror", "is_correct": true, "points": 6 },
+      { "text": "Stove", "is_correct": false, "points": 0 },
+      { "text": "Bed", "is_correct": false, "points": 0 },
+      { "text": "Couch", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason someone might cry.",
+    "options": [
+      { "text": "Sad Movie", "is_correct": true, "points": 35 },
+      { "text": "Wedding", "is_correct": true, "points": 28 },
+      { "text": "Death", "is_correct": true, "points": 18 },
+      { "text": "Onions", "is_correct": true, "points": 12 },
+      { "text": "Joy", "is_correct": true, "points": 7 },
+      { "text": "Math", "is_correct": false, "points": 0 },
+      { "text": "Tuesday", "is_correct": false, "points": 0 },
+      { "text": "Groceries", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you put on a sandwich.",
+    "options": [
+      { "text": "Lettuce", "is_correct": true, "points": 35 },
+      { "text": "Tomato", "is_correct": true, "points": 28 },
+      { "text": "Cheese", "is_correct": true, "points": 18 },
+      { "text": "Mustard", "is_correct": true, "points": 12 },
+      { "text": "Mayo", "is_correct": true, "points": 7 },
+      { "text": "Ice Cream", "is_correct": false, "points": 0 },
+      { "text": "Cereal", "is_correct": false, "points": 0 },
+      { "text": "Coffee", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a yellow food.",
+    "options": [
+      { "text": "Banana", "is_correct": true, "points": 42 },
+      { "text": "Corn", "is_correct": true, "points": 25 },
+      { "text": "Lemon", "is_correct": true, "points": 16 },
+      { "text": "Cheese", "is_correct": true, "points": 10 },
+      { "text": "Squash", "is_correct": true, "points": 7 },
+      { "text": "Blueberry", "is_correct": false, "points": 0 },
+      { "text": "Tomato", "is_correct": false, "points": 0 },
+      { "text": "Lettuce", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might do on a rainy day.",
+    "options": [
+      { "text": "Watch TV", "is_correct": true, "points": 38 },
+      { "text": "Read", "is_correct": true, "points": 28 },
+      { "text": "Sleep", "is_correct": true, "points": 16 },
+      { "text": "Play Games", "is_correct": true, "points": 10 },
+      { "text": "Cook", "is_correct": true, "points": 8 },
+      { "text": "Sunbathe", "is_correct": false, "points": 0 },
+      { "text": "Swim Outside", "is_correct": false, "points": 0 },
+      { "text": "Barbecue", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a type of footwear.",
+    "options": [
+      { "text": "Sneakers", "is_correct": true, "points": 38 },
+      { "text": "Boots", "is_correct": true, "points": 28 },
+      { "text": "Sandals", "is_correct": true, "points": 16 },
+      { "text": "Heels", "is_correct": true, "points": 12 },
+      { "text": "Flip Flops", "is_correct": true, "points": 6 },
+      { "text": "Gloves", "is_correct": false, "points": 0 },
+      { "text": "Hats", "is_correct": false, "points": 0 },
+      { "text": "Scarves", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a fruit that grows on trees.",
+    "options": [
+      { "text": "Apple", "is_correct": true, "points": 42 },
+      { "text": "Orange", "is_correct": true, "points": 28 },
+      { "text": "Cherry", "is_correct": true, "points": 14 },
+      { "text": "Peach", "is_correct": true, "points": 10 },
+      { "text": "Pear", "is_correct": true, "points": 6 },
+      { "text": "Strawberry", "is_correct": false, "points": 0 },
+      { "text": "Watermelon", "is_correct": false, "points": 0 },
+      { "text": "Pineapple", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you need for camping.",
+    "options": [
+      { "text": "Tent", "is_correct": true, "points": 45 },
+      { "text": "Sleeping Bag", "is_correct": true, "points": 25 },
+      { "text": "Flashlight", "is_correct": true, "points": 15 },
+      { "text": "Food", "is_correct": true, "points": 10 },
+      { "text": "Fire Starter", "is_correct": true, "points": 5 },
+      { "text": "Television", "is_correct": false, "points": 0 },
+      { "text": "Microwave", "is_correct": false, "points": 0 },
+      { "text": "Couch", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something found in a kitchen drawer.",
+    "options": [
+      { "text": "Silverware", "is_correct": true, "points": 40 },
+      { "text": "Knives", "is_correct": true, "points": 25 },
+      { "text": "Spatula", "is_correct": true, "points": 16 },
+      { "text": "Can Opener", "is_correct": true, "points": 12 },
+      { "text": "Scissors", "is_correct": true, "points": 7 },
+      { "text": "Shoes", "is_correct": false, "points": 0 },
+      { "text": "Books", "is_correct": false, "points": 0 },
+      { "text": "Clothes", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a type of TV show.",
+    "options": [
+      { "text": "Drama", "is_correct": true, "points": 35 },
+      { "text": "Comedy", "is_correct": true, "points": 28 },
+      { "text": "Reality", "is_correct": true, "points": 18 },
+      { "text": "News", "is_correct": true, "points": 12 },
+      { "text": "Game Show", "is_correct": true, "points": 7 },
+      { "text": "Silence", "is_correct": false, "points": 0 },
+      { "text": "Static", "is_correct": false, "points": 0 },
+      { "text": "Blank Screen", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find at a gas station.",
+    "options": [
+      { "text": "Fuel", "is_correct": true, "points": 45 },
+      { "text": "Snacks", "is_correct": true, "points": 25 },
+      { "text": "Drinks", "is_correct": true, "points": 15 },
+      { "text": "Air Pump", "is_correct": true, "points": 10 },
+      { "text": "Car Wash", "is_correct": true, "points": 5 },
+      { "text": "Furniture", "is_correct": false, "points": 0 },
+      { "text": "Electronics", "is_correct": false, "points": 0 },
+      { "text": "Clothing", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a musical instrument.",
+    "options": [
+      { "text": "Piano", "is_correct": true, "points": 38 },
+      { "text": "Guitar", "is_correct": true, "points": 30 },
+      { "text": "Drums", "is_correct": true, "points": 15 },
+      { "text": "Violin", "is_correct": true, "points": 10 },
+      { "text": "Trumpet", "is_correct": true, "points": 7 },
+      { "text": "Chair", "is_correct": false, "points": 0 },
+      { "text": "Table", "is_correct": false, "points": 0 },
+      { "text": "Lamp", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might wear to a wedding.",
+    "options": [
+      { "text": "Dress", "is_correct": true, "points": 40 },
+      { "text": "Suit", "is_correct": true, "points": 30 },
+      { "text": "Tie", "is_correct": true, "points": 14 },
+      { "text": "Heels", "is_correct": true, "points": 10 },
+      { "text": "Jewelry", "is_correct": true, "points": 6 },
+      { "text": "Pajamas", "is_correct": false, "points": 0 },
+      { "text": "Swimsuit", "is_correct": false, "points": 0 },
+      { "text": "Gym Clothes", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a body part that gets sore.",
+    "options": [
+      { "text": "Back", "is_correct": true, "points": 42 },
+      { "text": "Feet", "is_correct": true, "points": 25 },
+      { "text": "Neck", "is_correct": true, "points": 16 },
+      { "text": "Knees", "is_correct": true, "points": 10 },
+      { "text": "Shoulders", "is_correct": true, "points": 7 },
+      { "text": "Hair", "is_correct": false, "points": 0 },
+      { "text": "Nails", "is_correct": false, "points": 0 },
+      { "text": "Teeth", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a famous cartoon character.",
+    "options": [
+      { "text": "Mickey Mouse", "is_correct": true, "points": 42 },
+      { "text": "Bugs Bunny", "is_correct": true, "points": 25 },
+      { "text": "SpongeBob", "is_correct": true, "points": 16 },
+      { "text": "Homer Simpson", "is_correct": true, "points": 10 },
+      { "text": "Scooby-Doo", "is_correct": true, "points": 7 },
+      { "text": "Abraham Lincoln", "is_correct": false, "points": 0 },
+      { "text": "Einstein", "is_correct": false, "points": 0 },
+      { "text": "Shakespeare", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something people do on vacation.",
+    "options": [
+      { "text": "Relax", "is_correct": true, "points": 38 },
+      { "text": "Sightseeing", "is_correct": true, "points": 28 },
+      { "text": "Swim", "is_correct": true, "points": 16 },
+      { "text": "Eat Out", "is_correct": true, "points": 12 },
+      { "text": "Take Photos", "is_correct": true, "points": 6 },
+      { "text": "Work", "is_correct": false, "points": 0 },
+      { "text": "Clean House", "is_correct": false, "points": 0 },
+      { "text": "Do Taxes", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something found in a hotel room.",
+    "options": [
+      { "text": "Bed", "is_correct": true, "points": 42 },
+      { "text": "TV", "is_correct": true, "points": 25 },
+      { "text": "Bible", "is_correct": true, "points": 15 },
+      { "text": "Mini Fridge", "is_correct": true, "points": 10 },
+      { "text": "Coffee Maker", "is_correct": true, "points": 8 },
+      { "text": "Horse", "is_correct": false, "points": 0 },
+      { "text": "Pool", "is_correct": false, "points": 0 },
+      { "text": "Farm", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to buy flowers.",
+    "options": [
+      { "text": "Birthday", "is_correct": true, "points": 35 },
+      { "text": "Anniversary", "is_correct": true, "points": 28 },
+      { "text": "Apology", "is_correct": true, "points": 18 },
+      { "text": "Valentine's Day", "is_correct": true, "points": 12 },
+      { "text": "Funeral", "is_correct": true, "points": 7 },
+      { "text": "Tuesday", "is_correct": false, "points": 0 },
+      { "text": "Traffic", "is_correct": false, "points": 0 },
+      { "text": "Rain", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a place with long lines.",
+    "options": [
+      { "text": "DMV", "is_correct": true, "points": 40 },
+      { "text": "Theme Park", "is_correct": true, "points": 28 },
+      { "text": "Airport", "is_correct": true, "points": 16 },
+      { "text": "Bank", "is_correct": true, "points": 10 },
+      { "text": "Post Office", "is_correct": true, "points": 6 },
+      { "text": "Your House", "is_correct": false, "points": 0 },
+      { "text": "Desert", "is_correct": false, "points": 0 },
+      { "text": "Forest", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do when you wake up.",
+    "options": [
+      { "text": "Brush Teeth", "is_correct": true, "points": 35 },
+      { "text": "Shower", "is_correct": true, "points": 28 },
+      { "text": "Eat Breakfast", "is_correct": true, "points": 18 },
+      { "text": "Check Phone", "is_correct": true, "points": 12 },
+      { "text": "Make Coffee", "is_correct": true, "points": 7 },
+      { "text": "Go To Sleep", "is_correct": false, "points": 0 },
+      { "text": "Eat Dinner", "is_correct": false, "points": 0 },
+      { "text": "Watch Stars", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a movie snack.",
+    "options": [
+      { "text": "Popcorn", "is_correct": true, "points": 50 },
+      { "text": "Candy", "is_correct": true, "points": 25 },
+      { "text": "Nachos", "is_correct": true, "points": 12 },
+      { "text": "Soda", "is_correct": true, "points": 8 },
+      { "text": "Hot Dog", "is_correct": true, "points": 5 },
+      { "text": "Steak", "is_correct": false, "points": 0 },
+      { "text": "Lobster", "is_correct": false, "points": 0 },
+      { "text": "Sushi", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find in a garage.",
+    "options": [
+      { "text": "Car", "is_correct": true, "points": 45 },
+      { "text": "Tools", "is_correct": true, "points": 25 },
+      { "text": "Bikes", "is_correct": true, "points": 15 },
+      { "text": "Boxes", "is_correct": true, "points": 10 },
+      { "text": "Lawn Mower", "is_correct": true, "points": 5 },
+      { "text": "Bed", "is_correct": false, "points": 0 },
+      { "text": "Bathtub", "is_correct": false, "points": 0 },
+      { "text": "Kitchen", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to visit the bank.",
+    "options": [
+      { "text": "Deposit", "is_correct": true, "points": 38 },
+      { "text": "Withdraw", "is_correct": true, "points": 28 },
+      { "text": "Loan", "is_correct": true, "points": 16 },
+      { "text": "Open Account", "is_correct": true, "points": 10 },
+      { "text": "Cash Check", "is_correct": true, "points": 8 },
+      { "text": "Swim", "is_correct": false, "points": 0 },
+      { "text": "Eat", "is_correct": false, "points": 0 },
+      { "text": "Sleep", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find at a carnival.",
+    "options": [
+      { "text": "Rides", "is_correct": true, "points": 40 },
+      { "text": "Games", "is_correct": true, "points": 28 },
+      { "text": "Cotton Candy", "is_correct": true, "points": 15 },
+      { "text": "Clowns", "is_correct": true, "points": 10 },
+      { "text": "Prizes", "is_correct": true, "points": 7 },
+      { "text": "Homework", "is_correct": false, "points": 0 },
+      { "text": "Office", "is_correct": false, "points": 0 },
+      { "text": "Library", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might put in coffee.",
+    "options": [
+      { "text": "Sugar", "is_correct": true, "points": 40 },
+      { "text": "Cream", "is_correct": true, "points": 30 },
+      { "text": "Milk", "is_correct": true, "points": 15 },
+      { "text": "Sweetener", "is_correct": true, "points": 10 },
+      { "text": "Cinnamon", "is_correct": true, "points": 5 },
+      { "text": "Ketchup", "is_correct": false, "points": 0 },
+      { "text": "Mustard", "is_correct": false, "points": 0 },
+      { "text": "Salt", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a type of cheese.",
+    "options": [
+      { "text": "Cheddar", "is_correct": true, "points": 40 },
+      { "text": "Mozzarella", "is_correct": true, "points": 28 },
+      { "text": "Swiss", "is_correct": true, "points": 15 },
+      { "text": "Parmesan", "is_correct": true, "points": 10 },
+      { "text": "Brie", "is_correct": true, "points": 7 },
+      { "text": "Bread", "is_correct": false, "points": 0 },
+      { "text": "Butter", "is_correct": false, "points": 0 },
+      { "text": "Milk", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do at a concert.",
+    "options": [
+      { "text": "Dance", "is_correct": true, "points": 38 },
+      { "text": "Sing Along", "is_correct": true, "points": 28 },
+      { "text": "Cheer", "is_correct": true, "points": 16 },
+      { "text": "Take Photos", "is_correct": true, "points": 12 },
+      { "text": "Buy Merchandise", "is_correct": true, "points": 6 },
+      { "text": "Sleep", "is_correct": false, "points": 0 },
+      { "text": "Study", "is_correct": false, "points": 0 },
+      { "text": "Cook", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to stay home.",
+    "options": [
+      { "text": "Sick", "is_correct": true, "points": 42 },
+      { "text": "Bad Weather", "is_correct": true, "points": 25 },
+      { "text": "Work From Home", "is_correct": true, "points": 16 },
+      { "text": "Relaxation", "is_correct": true, "points": 10 },
+      { "text": "Expecting Delivery", "is_correct": true, "points": 7 },
+      { "text": "Free Food", "is_correct": false, "points": 0 },
+      { "text": "Party", "is_correct": false, "points": 0 },
+      { "text": "Concert", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something kids play on at a playground.",
+    "options": [
+      { "text": "Swings", "is_correct": true, "points": 42 },
+      { "text": "Slide", "is_correct": true, "points": 28 },
+      { "text": "Monkey Bars", "is_correct": true, "points": 15 },
+      { "text": "Seesaw", "is_correct": true, "points": 10 },
+      { "text": "Sandbox", "is_correct": true, "points": 5 },
+      { "text": "Car", "is_correct": false, "points": 0 },
+      { "text": "Computer", "is_correct": false, "points": 0 },
+      { "text": "Treadmill", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something found at a construction site.",
+    "options": [
+      { "text": "Hard Hats", "is_correct": true, "points": 35 },
+      { "text": "Crane", "is_correct": true, "points": 28 },
+      { "text": "Workers", "is_correct": true, "points": 18 },
+      { "text": "Lumber", "is_correct": true, "points": 12 },
+      { "text": "Cement", "is_correct": true, "points": 7 },
+      { "text": "Pool", "is_correct": false, "points": 0 },
+      { "text": "Library", "is_correct": false, "points": 0 },
+      { "text": "Restaurant", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to exercise.",
+    "options": [
+      { "text": "Lose Weight", "is_correct": true, "points": 42 },
+      { "text": "Stay Healthy", "is_correct": true, "points": 28 },
+      { "text": "Build Muscle", "is_correct": true, "points": 14 },
+      { "text": "Feel Good", "is_correct": true, "points": 10 },
+      { "text": "Energy", "is_correct": true, "points": 6 },
+      { "text": "Get Tired", "is_correct": false, "points": 0 },
+      { "text": "Eat More", "is_correct": false, "points": 0 },
+      { "text": "Watch TV", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a green vegetable.",
+    "options": [
+      { "text": "Broccoli", "is_correct": true, "points": 38 },
+      { "text": "Spinach", "is_correct": true, "points": 28 },
+      { "text": "Peas", "is_correct": true, "points": 16 },
+      { "text": "Green Beans", "is_correct": true, "points": 12 },
+      { "text": "Cucumber", "is_correct": true, "points": 6 },
+      { "text": "Carrot", "is_correct": false, "points": 0 },
+      { "text": "Tomato", "is_correct": false, "points": 0 },
+      { "text": "Eggplant", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might receive in the mail.",
+    "options": [
+      { "text": "Bills", "is_correct": true, "points": 40 },
+      { "text": "Packages", "is_correct": true, "points": 28 },
+      { "text": "Letters", "is_correct": true, "points": 15 },
+      { "text": "Magazines", "is_correct": true, "points": 10 },
+      { "text": "Coupons", "is_correct": true, "points": 7 },
+      { "text": "Car", "is_correct": false, "points": 0 },
+      { "text": "House", "is_correct": false, "points": 0 },
+      { "text": "Dog", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a citrus fruit.",
+    "options": [
+      { "text": "Orange", "is_correct": true, "points": 45 },
+      { "text": "Lemon", "is_correct": true, "points": 28 },
+      { "text": "Lime", "is_correct": true, "points": 14 },
+      { "text": "Grapefruit", "is_correct": true, "points": 8 },
+      { "text": "Tangerine", "is_correct": true, "points": 5 },
+      { "text": "Apple", "is_correct": false, "points": 0 },
+      { "text": "Banana", "is_correct": false, "points": 0 },
+      { "text": "Grape", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find at a wedding.",
+    "options": [
+      { "text": "Cake", "is_correct": true, "points": 42 },
+      { "text": "Flowers", "is_correct": true, "points": 25 },
+      { "text": "Bride", "is_correct": true, "points": 16 },
+      { "text": "Music", "is_correct": true, "points": 10 },
+      { "text": "Rings", "is_correct": true, "points": 7 },
+      { "text": "Clowns", "is_correct": false, "points": 0 },
+      { "text": "Slides", "is_correct": false, "points": 0 },
+      { "text": "Homework", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a job that requires a uniform.",
+    "options": [
+      { "text": "Police Officer", "is_correct": true, "points": 38 },
+      { "text": "Doctor", "is_correct": true, "points": 25 },
+      { "text": "Firefighter", "is_correct": true, "points": 18 },
+      { "text": "Nurse", "is_correct": true, "points": 12 },
+      { "text": "Chef", "is_correct": true, "points": 7 },
+      { "text": "Artist", "is_correct": false, "points": 0 },
+      { "text": "Writer", "is_correct": false, "points": 0 },
+      { "text": "Musician", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might see at the airport.",
+    "options": [
+      { "text": "Planes", "is_correct": true, "points": 42 },
+      { "text": "Luggage", "is_correct": true, "points": 28 },
+      { "text": "Security", "is_correct": true, "points": 14 },
+      { "text": "Shops", "is_correct": true, "points": 10 },
+      { "text": "Pilots", "is_correct": true, "points": 6 },
+      { "text": "Trains", "is_correct": false, "points": 0 },
+      { "text": "Boats", "is_correct": false, "points": 0 },
+      { "text": "Horses", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to go to the hospital.",
+    "options": [
+      { "text": "Emergency", "is_correct": true, "points": 38 },
+      { "text": "Surgery", "is_correct": true, "points": 28 },
+      { "text": "Having Baby", "is_correct": true, "points": 16 },
+      { "text": "Tests", "is_correct": true, "points": 10 },
+      { "text": "Visiting", "is_correct": true, "points": 8 },
+      { "text": "Lunch", "is_correct": false, "points": 0 },
+      { "text": "Shopping", "is_correct": false, "points": 0 },
+      { "text": "Movie", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you bring to a picnic.",
+    "options": [
+      { "text": "Blanket", "is_correct": true, "points": 38 },
+      { "text": "Food", "is_correct": true, "points": 30 },
+      { "text": "Drinks", "is_correct": true, "points": 15 },
+      { "text": "Basket", "is_correct": true, "points": 10 },
+      { "text": "Sunscreen", "is_correct": true, "points": 7 },
+      { "text": "Television", "is_correct": false, "points": 0 },
+      { "text": "Furniture", "is_correct": false, "points": 0 },
+      { "text": "Bed", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a type of cookie.",
+    "options": [
+      { "text": "Chocolate Chip", "is_correct": true, "points": 45 },
+      { "text": "Oatmeal", "is_correct": true, "points": 25 },
+      { "text": "Sugar", "is_correct": true, "points": 15 },
+      { "text": "Peanut Butter", "is_correct": true, "points": 10 },
+      { "text": "Snickerdoodle", "is_correct": true, "points": 5 },
+      { "text": "Bread", "is_correct": false, "points": 0 },
+      { "text": "Cake", "is_correct": false, "points": 0 },
+      { "text": "Muffin", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you see in the sky.",
+    "options": [
+      { "text": "Sun", "is_correct": true, "points": 40 },
+      { "text": "Clouds", "is_correct": true, "points": 30 },
+      { "text": "Moon", "is_correct": true, "points": 14 },
+      { "text": "Stars", "is_correct": true, "points": 10 },
+      { "text": "Planes", "is_correct": true, "points": 6 },
+      { "text": "Fish", "is_correct": false, "points": 0 },
+      { "text": "Cars", "is_correct": false, "points": 0 },
+      { "text": "Trees", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something people do on a road trip.",
+    "options": [
+      { "text": "Listen to Music", "is_correct": true, "points": 38 },
+      { "text": "Eat Snacks", "is_correct": true, "points": 28 },
+      { "text": "Sleep", "is_correct": true, "points": 16 },
+      { "text": "Play Games", "is_correct": true, "points": 10 },
+      { "text": "Stop for Gas", "is_correct": true, "points": 8 },
+      { "text": "Swim", "is_correct": false, "points": 0 },
+      { "text": "Ski", "is_correct": false, "points": 0 },
+      { "text": "Hike", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something found in a purse.",
+    "options": [
+      { "text": "Wallet", "is_correct": true, "points": 38 },
+      { "text": "Phone", "is_correct": true, "points": 30 },
+      { "text": "Keys", "is_correct": true, "points": 15 },
+      { "text": "Lipstick", "is_correct": true, "points": 10 },
+      { "text": "Tissues", "is_correct": true, "points": 7 },
+      { "text": "Laptop", "is_correct": false, "points": 0 },
+      { "text": "Pillow", "is_correct": false, "points": 0 },
+      { "text": "Lamp", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a popular sandwich.",
+    "options": [
+      { "text": "BLT", "is_correct": true, "points": 38 },
+      { "text": "Club", "is_correct": true, "points": 25 },
+      { "text": "Ham and Cheese", "is_correct": true, "points": 18 },
+      { "text": "Turkey", "is_correct": true, "points": 12 },
+      { "text": "PB&J", "is_correct": true, "points": 7 },
+      { "text": "Pizza", "is_correct": false, "points": 0 },
+      { "text": "Soup", "is_correct": false, "points": 0 },
+      { "text": "Salad", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a type of doctor.",
+    "options": [
+      { "text": "Dentist", "is_correct": true, "points": 35 },
+      { "text": "Surgeon", "is_correct": true, "points": 28 },
+      { "text": "Pediatrician", "is_correct": true, "points": 18 },
+      { "text": "Cardiologist", "is_correct": true, "points": 12 },
+      { "text": "Dermatologist", "is_correct": true, "points": 7 },
+      { "text": "Plumber", "is_correct": false, "points": 0 },
+      { "text": "Mechanic", "is_correct": false, "points": 0 },
+      { "text": "Chef", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do to cool off in summer.",
+    "options": [
+      { "text": "Swim", "is_correct": true, "points": 42 },
+      { "text": "Air Conditioning", "is_correct": true, "points": 28 },
+      { "text": "Drink Cold Drinks", "is_correct": true, "points": 14 },
+      { "text": "Eat Ice Cream", "is_correct": true, "points": 10 },
+      { "text": "Go to Beach", "is_correct": true, "points": 6 },
+      { "text": "Build Fire", "is_correct": false, "points": 0 },
+      { "text": "Wear Coat", "is_correct": false, "points": 0 },
+      { "text": "Ski", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do at a barbecue.",
+    "options": [
+      { "text": "Grill", "is_correct": true, "points": 42 },
+      { "text": "Eat", "is_correct": true, "points": 28 },
+      { "text": "Drink", "is_correct": true, "points": 14 },
+      { "text": "Socialize", "is_correct": true, "points": 10 },
+      { "text": "Play Games", "is_correct": true, "points": 6 },
+      { "text": "Swim", "is_correct": false, "points": 0 },
+      { "text": "Sleep", "is_correct": false, "points": 0 },
+      { "text": "Work", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason someone might smile.",
+    "options": [
+      { "text": "Happy", "is_correct": true, "points": 45 },
+      { "text": "Joke", "is_correct": true, "points": 25 },
+      { "text": "Photo", "is_correct": true, "points": 15 },
+      { "text": "Compliment", "is_correct": true, "points": 10 },
+      { "text": "Love", "is_correct": true, "points": 5 },
+      { "text": "Sad", "is_correct": false, "points": 0 },
+      { "text": "Angry", "is_correct": false, "points": 0 },
+      { "text": "Tired", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you find in a school cafeteria.",
+    "options": [
+      { "text": "Food", "is_correct": true, "points": 42 },
+      { "text": "Tables", "is_correct": true, "points": 25 },
+      { "text": "Trays", "is_correct": true, "points": 15 },
+      { "text": "Students", "is_correct": true, "points": 12 },
+      { "text": "Milk", "is_correct": true, "points": 6 },
+      { "text": "Beds", "is_correct": false, "points": 0 },
+      { "text": "Cars", "is_correct": false, "points": 0 },
+      { "text": "Pool", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something that has buttons.",
+    "options": [
+      { "text": "Shirt", "is_correct": true, "points": 38 },
+      { "text": "Remote", "is_correct": true, "points": 28 },
+      { "text": "Phone", "is_correct": true, "points": 16 },
+      { "text": "Elevator", "is_correct": true, "points": 10 },
+      { "text": "Microwave", "is_correct": true, "points": 8 },
+      { "text": "Water", "is_correct": false, "points": 0 },
+      { "text": "Air", "is_correct": false, "points": 0 },
+      { "text": "Grass", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something found in the ocean.",
+    "options": [
+      { "text": "Fish", "is_correct": true, "points": 45 },
+      { "text": "Sharks", "is_correct": true, "points": 25 },
+      { "text": "Seaweed", "is_correct": true, "points": 14 },
+      { "text": "Coral", "is_correct": true, "points": 10 },
+      { "text": "Whales", "is_correct": true, "points": 6 },
+      { "text": "Trees", "is_correct": false, "points": 0 },
+      { "text": "Cars", "is_correct": false, "points": 0 },
+      { "text": "Houses", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to take a taxi.",
+    "options": [
+      { "text": "No Car", "is_correct": true, "points": 35 },
+      { "text": "Airport", "is_correct": true, "points": 28 },
+      { "text": "Drinking", "is_correct": true, "points": 18 },
+      { "text": "Convenience", "is_correct": true, "points": 12 },
+      { "text": "Emergency", "is_correct": true, "points": 7 },
+      { "text": "Exercise", "is_correct": false, "points": 0 },
+      { "text": "Fun", "is_correct": false, "points": 0 },
+      { "text": "Scenery", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a superhero.",
+    "options": [
+      { "text": "Superman", "is_correct": true, "points": 40 },
+      { "text": "Batman", "is_correct": true, "points": 30 },
+      { "text": "Spider-Man", "is_correct": true, "points": 15 },
+      { "text": "Wonder Woman", "is_correct": true, "points": 10 },
+      { "text": "Iron Man", "is_correct": true, "points": 5 },
+      { "text": "Mailman", "is_correct": false, "points": 0 },
+      { "text": "Accountant", "is_correct": false, "points": 0 },
+      { "text": "Teacher", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do at a baby shower.",
+    "options": [
+      { "text": "Give Gifts", "is_correct": true, "points": 42 },
+      { "text": "Play Games", "is_correct": true, "points": 28 },
+      { "text": "Eat Cake", "is_correct": true, "points": 14 },
+      { "text": "Open Presents", "is_correct": true, "points": 10 },
+      { "text": "Decorate", "is_correct": true, "points": 6 },
+      { "text": "Sleep", "is_correct": false, "points": 0 },
+      { "text": "Work", "is_correct": false, "points": 0 },
+      { "text": "Exercise", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something with wheels.",
+    "options": [
+      { "text": "Car", "is_correct": true, "points": 45 },
+      { "text": "Bike", "is_correct": true, "points": 28 },
+      { "text": "Bus", "is_correct": true, "points": 12 },
+      { "text": "Skateboard", "is_correct": true, "points": 8 },
+      { "text": "Shopping Cart", "is_correct": true, "points": 7 },
+      { "text": "Boat", "is_correct": false, "points": 0 },
+      { "text": "Plane", "is_correct": false, "points": 0 },
+      { "text": "Helicopter", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a flavor of potato chip.",
+    "options": [
+      { "text": "BBQ", "is_correct": true, "points": 38 },
+      { "text": "Sour Cream", "is_correct": true, "points": 28 },
+      { "text": "Salt & Vinegar", "is_correct": true, "points": 16 },
+      { "text": "Cheddar", "is_correct": true, "points": 10 },
+      { "text": "Plain", "is_correct": true, "points": 8 },
+      { "text": "Chocolate", "is_correct": false, "points": 0 },
+      { "text": "Vanilla", "is_correct": false, "points": 0 },
+      { "text": "Strawberry", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you do with a phone.",
+    "options": [
+      { "text": "Call", "is_correct": true, "points": 42 },
+      { "text": "Text", "is_correct": true, "points": 28 },
+      { "text": "Browse Internet", "is_correct": true, "points": 14 },
+      { "text": "Take Photos", "is_correct": true, "points": 10 },
+      { "text": "Play Games", "is_correct": true, "points": 6 },
+      { "text": "Cook", "is_correct": false, "points": 0 },
+      { "text": "Drive", "is_correct": false, "points": 0 },
+      { "text": "Swim", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a type of tree.",
+    "options": [
+      { "text": "Oak", "is_correct": true, "points": 38 },
+      { "text": "Pine", "is_correct": true, "points": 28 },
+      { "text": "Maple", "is_correct": true, "points": 16 },
+      { "text": "Palm", "is_correct": true, "points": 10 },
+      { "text": "Willow", "is_correct": true, "points": 8 },
+      { "text": "Cactus", "is_correct": false, "points": 0 },
+      { "text": "Grass", "is_correct": false, "points": 0 },
+      { "text": "Flower", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might do on a Sunday.",
+    "options": [
+      { "text": "Church", "is_correct": true, "points": 38 },
+      { "text": "Relax", "is_correct": true, "points": 28 },
+      { "text": "Watch Sports", "is_correct": true, "points": 16 },
+      { "text": "Family Dinner", "is_correct": true, "points": 10 },
+      { "text": "Brunch", "is_correct": true, "points": 8 },
+      { "text": "Work", "is_correct": false, "points": 0 },
+      { "text": "School", "is_correct": false, "points": 0 },
+      { "text": "Exam", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something people argue about.",
+    "options": [
+      { "text": "Money", "is_correct": true, "points": 42 },
+      { "text": "Politics", "is_correct": true, "points": 28 },
+      { "text": "Chores", "is_correct": true, "points": 14 },
+      { "text": "TV Remote", "is_correct": true, "points": 10 },
+      { "text": "Driving", "is_correct": true, "points": 6 },
+      { "text": "Clouds", "is_correct": false, "points": 0 },
+      { "text": "Air", "is_correct": false, "points": 0 },
+      { "text": "Grass", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a piece of furniture.",
+    "options": [
+      { "text": "Couch", "is_correct": true, "points": 42 },
+      { "text": "Chair", "is_correct": true, "points": 28 },
+      { "text": "Bed", "is_correct": true, "points": 14 },
+      { "text": "Table", "is_correct": true, "points": 10 },
+      { "text": "Desk", "is_correct": true, "points": 6 },
+      { "text": "Car", "is_correct": false, "points": 0 },
+      { "text": "Television", "is_correct": false, "points": 0 },
+      { "text": "Lamp", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might see on a farm.",
+    "options": [
+      { "text": "Cows", "is_correct": true, "points": 40 },
+      { "text": "Chickens", "is_correct": true, "points": 28 },
+      { "text": "Tractor", "is_correct": true, "points": 15 },
+      { "text": "Barn", "is_correct": true, "points": 10 },
+      { "text": "Pigs", "is_correct": true, "points": 7 },
+      { "text": "Skyscrapers", "is_correct": false, "points": 0 },
+      { "text": "Subway", "is_correct": false, "points": 0 },
+      { "text": "Airport", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a reason to set an alarm.",
+    "options": [
+      { "text": "Wake Up", "is_correct": true, "points": 50 },
+      { "text": "Appointment", "is_correct": true, "points": 22 },
+      { "text": "Medication", "is_correct": true, "points": 12 },
+      { "text": "Meeting", "is_correct": true, "points": 10 },
+      { "text": "Flight", "is_correct": true, "points": 6 },
+      { "text": "Sleep", "is_correct": false, "points": 0 },
+      { "text": "Relax", "is_correct": false, "points": 0 },
+      { "text": "Vacation", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might order at a Chinese restaurant.",
+    "options": [
+      { "text": "Fried Rice", "is_correct": true, "points": 40 },
+      { "text": "Lo Mein", "is_correct": true, "points": 28 },
+      { "text": "Orange Chicken", "is_correct": true, "points": 15 },
+      { "text": "Egg Rolls", "is_correct": true, "points": 10 },
+      { "text": "Wonton Soup", "is_correct": true, "points": 7 },
+      { "text": "Pizza", "is_correct": false, "points": 0 },
+      { "text": "Burger", "is_correct": false, "points": 0 },
+      { "text": "Tacos", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something kids do after school.",
+    "options": [
+      { "text": "Homework", "is_correct": true, "points": 42 },
+      { "text": "Watch TV", "is_correct": true, "points": 25 },
+      { "text": "Play", "is_correct": true, "points": 16 },
+      { "text": "Snack", "is_correct": true, "points": 10 },
+      { "text": "Sports", "is_correct": true, "points": 7 },
+      { "text": "Work", "is_correct": false, "points": 0 },
+      { "text": "Drive", "is_correct": false, "points": 0 },
+      { "text": "Vote", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a winter activity.",
+    "options": [
+      { "text": "Skiing", "is_correct": true, "points": 38 },
+      { "text": "Sledding", "is_correct": true, "points": 28 },
+      { "text": "Ice Skating", "is_correct": true, "points": 16 },
+      { "text": "Snowball Fight", "is_correct": true, "points": 12 },
+      { "text": "Build Snowman", "is_correct": true, "points": 6 },
+      { "text": "Swimming", "is_correct": false, "points": 0 },
+      { "text": "Surfing", "is_correct": false, "points": 0 },
+      { "text": "Sunbathing", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might find under your bed.",
+    "options": [
+      { "text": "Dust", "is_correct": true, "points": 38 },
+      { "text": "Shoes", "is_correct": true, "points": 28 },
+      { "text": "Monsters", "is_correct": true, "points": 16 },
+      { "text": "Lost Items", "is_correct": true, "points": 10 },
+      { "text": "Storage", "is_correct": true, "points": 8 },
+      { "text": "Car", "is_correct": false, "points": 0 },
+      { "text": "Elephant", "is_correct": false, "points": 0 },
+      { "text": "Pool", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name something you might regret buying.",
+    "options": [
+      { "text": "Clothes", "is_correct": true, "points": 35 },
+      { "text": "Car", "is_correct": true, "points": 28 },
+      { "text": "Electronics", "is_correct": true, "points": 18 },
+      { "text": "Food", "is_correct": true, "points": 12 },
+      { "text": "Exercise Equipment", "is_correct": true, "points": 7 },
+      { "text": "Air", "is_correct": false, "points": 0 },
+      { "text": "Water", "is_correct": false, "points": 0 },
+      { "text": "Sunshine", "is_correct": false, "points": 0 }
+    ]
+  },
+  {
+    "question_text": "We asked 100 people to name a place that has a drive-through.",
+    "options": [
+      { "text": "McDonald's", "is_correct": true, "points": 45 },
+      { "text": "Bank", "is_correct": true, "points": 25 },
+      { "text": "Starbucks", "is_correct": true, "points": 14 },
+      { "text": "Pharmacy", "is_correct": true, "points": 10 },
+      { "text": "Taco Bell", "is_correct": true, "points": 6 },
+      { "text": "Hospital", "is_correct": false, "points": 0 },
+      { "text": "Library", "is_correct": false, "points": 0 },
+      { "text": "School", "is_correct": false, "points": 0 }
+    ]
+  }
+]
