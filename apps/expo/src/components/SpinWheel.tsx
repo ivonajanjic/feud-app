@@ -115,10 +115,10 @@ export const SpinWheel = forwardRef<SpinWheelRef, SpinWheelProps>(
       const targetWedgeIndex = eligibleWedges[Math.floor(Math.random() * eligibleWedges.length)]!;
 
       // Calculate the rotation to land on that wedge's center
-      // To land on wedge N, we need to rotate by ((NUM_WEDGES - N) % NUM_WEDGES) * WEDGE_ANGLE
-      // This brings wedge N to the top (pointer position)
-      const wedgeCenterOffset =
-        ((NUM_WEDGES - targetWedgeIndex) % NUM_WEDGES) * WEDGE_ANGLE;
+      // Wedges are numbered CLOCKWISE from top (0, 1, 2, ... going clockwise)
+      // When wheel rotates clockwise, wedge indices at pointer go DOWN (15, 14, 13...)
+      // To land on wedge N, rotate by ((NUM_WEDGES - N) % NUM_WEDGES) * WEDGE_ANGLE
+      const wedgeCenterOffset = ((NUM_WEDGES - targetWedgeIndex) % NUM_WEDGES) * WEDGE_ANGLE;
 
       const targetRotation =
         currentRotation + fullRotations * 360 + wedgeCenterOffset;

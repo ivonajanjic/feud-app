@@ -17,33 +17,35 @@ export interface WedgeConfig {
 }
 
 // 16 wedges - matching the wheel asset layout (from routing.md)
-// Wedges numbered counter-clockwise from 12 o'clock
-// Coins ($): 5 wedges - values $50-$200
-// Survey Says (?): 5 wedges
-// Destroy: 3 wedges
-// Survey Steal (Diamond): 3 wedges
+// Wedges numbered CLOCKWISE from 12 o'clock (top)
+// 
+// Layout (clockwise from top):
+// 1-coin, 2-survey, 3-destroy, 4-steal, 5-coin, 6-survey, 7-destroy, 8-survey,
+// 9-coin, 10-steal, 11-coin, 12-survey, 13-destroy, 14-survey, 15-coin, 16-steal
+//
+// Coins ($): 5 wedges (ids: 0, 4, 8, 10, 14) - values $50-$200
+// Survey Says (?): 5 wedges (ids: 1, 5, 7, 11, 13)
+// Destroy: 3 wedges (ids: 2, 6, 12)
+// Survey Steal (Diamond): 3 wedges (ids: 3, 9, 15)
 //
 // Weighted Probability (ignores wedge count):
-// - Coins: 60%
-// - Destroy: 15%
-// - Survey Says: 15%
-// - Survey Steal: 10%
+// - Coins: 60%, Destroy: 15%, Survey Says: 15%, Survey Steal: 10%
 export const WEDGE_CONFIG: WedgeConfig[] = [
   { id: 0, type: "coin", value: 50, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 1, type: "steal", value: 0, label: "◆", color: "#5DADE2", textColor: "#FFFFFF" },
-  { id: 2, type: "survey", value: 0, label: "?", color: "#FFFFFF", textColor: "#000000" },
-  { id: 3, type: "coin", value: 100, label: "$", color: "#8E7CC3", textColor: "#000000" },
-  { id: 4, type: "survey", value: 0, label: "?", color: "#FFFFFF", textColor: "#000000" },
-  { id: 5, type: "destroy", value: 0, label: "DESTROY", color: "#A569BD", textColor: "#FFFFFF" },
-  { id: 6, type: "coin", value: 150, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 1, type: "survey", value: 0, label: "?", color: "#5DADE2", textColor: "#FFFFFF" },
+  { id: 2, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
+  { id: 3, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
+  { id: 4, type: "coin", value: 100, label: "$", color: "#8E7CC3", textColor: "#000000" },
+  { id: 5, type: "survey", value: 0, label: "?", color: "#A569BD", textColor: "#FFFFFF" },
+  { id: 6, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
   { id: 7, type: "survey", value: 0, label: "?", color: "#9B59B6", textColor: "#FFFFFF" },
-  { id: 8, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
-  { id: 9, type: "coin", value: 75, label: "$", color: "#7B68EE", textColor: "#000000" },
-  { id: 10, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
+  { id: 8, type: "coin", value: 150, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 9, type: "steal", value: 0, label: "◆", color: "#7B68EE", textColor: "#FFFFFF" },
+  { id: 10, type: "coin", value: 75, label: "$", color: "#FFFFFF", textColor: "#000000" },
   { id: 11, type: "survey", value: 0, label: "?", color: "#5B7FD9", textColor: "#FFFFFF" },
-  { id: 12, type: "coin", value: 200, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 12, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
   { id: 13, type: "survey", value: 0, label: "?", color: "#48C9B0", textColor: "#FFFFFF" },
-  { id: 14, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
+  { id: 14, type: "coin", value: 200, label: "$", color: "#FFFFFF", textColor: "#000000" },
   { id: 15, type: "steal", value: 0, label: "◆", color: "#5DADE2", textColor: "#FFFFFF" },
 ];
 
@@ -166,13 +168,15 @@ export function setLastWedgeResult(wedge: WedgeConfig | null): void {
 }
 
 // Calculate which wedge the wheel landed on based on rotation angle
-// The wheel image has wedge 0 at the top center
+// The wheel image has wedge 0 at the top center, numbered CLOCKWISE
 export function getWedgeFromRotation(rotation: number): WedgeConfig {
   // Normalize rotation to 0-360
   const normalizedRotation = ((rotation % 360) + 360) % 360;
   
   // The pointer is at the top (0 degrees), wheel rotates clockwise
-  // When wheel rotates by X degrees clockwise, wedge at position (360-X) is at top
+  // Wedges are numbered clockwise from top (0, 1, 2, ... going clockwise)
+  // When wheel rotates clockwise by X degrees, the wedge at (360 - X) position comes to top
+  // This means wedge indices go DOWN as rotation increases
   // Adding half wedge angle to align with wedge center
   const effectiveAngle = (360 - normalizedRotation + WEDGE_ANGLE / 2) % 360;
   const wedgeIndex = Math.floor(effectiveAngle / WEDGE_ANGLE) % NUM_WEDGES;
@@ -182,7 +186,9 @@ export function getWedgeFromRotation(rotation: number): WedgeConfig {
 
 // Calculate the rotation needed to land on a specific wedge's center
 export function getRotationForWedgeCenter(wedgeIndex: number, fullRotations: number): number {
-  // To make wedge N appear at top, wheel needs to rotate by ((NUM_WEDGES - N) % NUM_WEDGES) * WEDGE_ANGLE
+  // Wedges are numbered CLOCKWISE from top
+  // When wheel rotates clockwise, wedge indices at pointer go DOWN
+  // To land on wedge N, rotate by ((NUM_WEDGES - N) % NUM_WEDGES) * WEDGE_ANGLE
   const wedgeCenterOffset = ((NUM_WEDGES - wedgeIndex) % NUM_WEDGES) * WEDGE_ANGLE;
   return fullRotations * 360 + wedgeCenterOffset;
 }
