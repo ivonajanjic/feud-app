@@ -21,6 +21,12 @@ import {
   startMatchRound,
   recordMatchFlip,
   finishMatchRound,
+  startJackpotRound,
+  recordJackpotAnswer,
+  advanceJackpotQuestion,
+  startJackpotReveal,
+  revealNextJackpotAnswer,
+  finishJackpotRound,
   resetGameState,
   type WedgeConfig,
   type MatchSymbol,
@@ -77,6 +83,19 @@ export function useGameStore() {
       []
     ),
     finishMatchRound: useCallback(() => finishMatchRound(), []),
+    startJackpotRound: useCallback(() => startJackpotRound(), []),
+    recordJackpotAnswer: useCallback(
+      (questionText: string, answerText: string, points: number) =>
+        recordJackpotAnswer(questionText, answerText, points),
+      []
+    ),
+    advanceJackpotQuestion: useCallback(
+      (questionText: string) => advanceJackpotQuestion(questionText),
+      []
+    ),
+    startJackpotReveal: useCallback(() => startJackpotReveal(), []),
+    revealNextJackpotAnswer: useCallback(() => revealNextJackpotAnswer(), []),
+    finishJackpotRound: useCallback(() => finishJackpotRound(), []),
     resetGameState: useCallback(() => resetGameState(), []),
   };
 

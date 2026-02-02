@@ -16,6 +16,7 @@ const DEBUG_MODES = [
   { label: "Survey Steal", route: "/survey-steal" },
   { label: "Destroy", route: "/destroy" },
   { label: "Match & Win", route: "/match-and-win" },
+  { label: "Jackpot", route: "/jackpot" },
 ] as const;
 
 export default function Index() {

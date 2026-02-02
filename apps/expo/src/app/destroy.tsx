@@ -5,7 +5,6 @@ import { Stack, useRouter } from "expo-router";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withTiming,
   withSequence,
   withSpring,
 } from "react-native-reanimated";
@@ -101,33 +100,20 @@ export default function DestroyScreen() {
   const cardScale0 = useSharedValue(1);
   const cardScale1 = useSharedValue(1);
   const cardScale2 = useSharedValue(1);
-  const cardFlip0 = useSharedValue(0);
-  const cardFlip1 = useSharedValue(0);
-  const cardFlip2 = useSharedValue(0);
 
   // Card animated styles - must be called at top level
   const cardStyle0 = useAnimatedStyle(() => ({
-    transform: [
-      { scale: cardScale0.value },
-      { rotateY: `${cardFlip0.value * 180}deg` },
-    ],
+    transform: [{ scale: cardScale0.value }],
   }));
   const cardStyle1 = useAnimatedStyle(() => ({
-    transform: [
-      { scale: cardScale1.value },
-      { rotateY: `${cardFlip1.value * 180}deg` },
-    ],
+    transform: [{ scale: cardScale1.value }],
   }));
   const cardStyle2 = useAnimatedStyle(() => ({
-    transform: [
-      { scale: cardScale2.value },
-      { rotateY: `${cardFlip2.value * 180}deg` },
-    ],
+    transform: [{ scale: cardScale2.value }],
   }));
 
   const cardStyles = [cardStyle0, cardStyle1, cardStyle2];
   const cardScales = [cardScale0, cardScale1, cardScale2];
-  const cardFlips = [cardFlip0, cardFlip1, cardFlip2];
 
   // Initialize game
   useEffect(() => {
@@ -166,12 +152,11 @@ export default function DestroyScreen() {
 
       setSelectedCardIndex(cardIndex);
 
-      // Animate card
+      // Animate card with scale bounce for selection feedback
       cardScales[cardIndex]!.value = withSequence(
         withSpring(1.1),
         withSpring(1)
       );
-      cardFlips[cardIndex]!.value = withTiming(1, { duration: 400 });
 
       // Get the object for this card
       const object = selectedRoom.objects[cardIndex];
@@ -189,7 +174,7 @@ export default function DestroyScreen() {
         setPhase("revealed");
       }, 500);
     },
-    [selectedCardIndex, selectedRoom.objects, finishDestroyRound, cardScales, cardFlips]
+    [selectedCardIndex, selectedRoom.objects, finishDestroyRound, cardScales]
   );
 
   const handleReturnHome = useCallback(() => {
@@ -451,7 +436,6 @@ export default function DestroyScreen() {
               }}
             >
               {[0, 1, 2].map((index) => {
-                const isRevealed = selectedCardIndex === index;
                 const object = selectedRoom.objects[index];
 
                 return (
@@ -466,7 +450,7 @@ export default function DestroyScreen() {
                         {
                           width: SCREEN_WIDTH * 0.25,
                           height: SCREEN_WIDTH * 0.35,
-                          backgroundColor: isRevealed ? "#2a2a2a" : "#d4a853",
+                          backgroundColor: "#2a2a2a",
                           borderWidth: 3,
                           borderColor: "#d4a853",
                           borderRadius: 12,
@@ -480,19 +464,7 @@ export default function DestroyScreen() {
                         },
                       ]}
                     >
-                      {isRevealed && object ? (
-                        <Text style={{ fontSize: 48 }}>{object.emoji}</Text>
-                      ) : (
-                        <Text
-                          style={{
-                            fontSize: 48,
-                            fontWeight: "700",
-                            color: "#1c1c1e",
-                          }}
-                        >
-                          ?
-                        </Text>
-                      )}
+                      <Text style={{ fontSize: 48 }}>{object?.emoji}</Text>
                     </Animated.View>
                   </Pressable>
                 );
@@ -507,7 +479,7 @@ export default function DestroyScreen() {
                 textAlign: "center",
               }}
             >
-              Tap a card to destroy an item
+              Choose an item to destroy
             </Text>
           </View>
         </SafeAreaView>

@@ -78,6 +78,19 @@ export const MATCH_COIN_POINTS = 100;
 // Match symbol type
 export type MatchSymbol = "crown" | "bag" | "coin";
 
+// Jackpot constants
+export const JACKPOT_TIME_PER_QUESTION = 10;
+export const JACKPOT_WIN_THRESHOLD = 100;
+export const JACKPOT_PRIZE = 3500;
+export const JACKPOT_QUESTION_COUNT = 5;
+
+// Jackpot answer type
+export interface JackpotAnswer {
+  questionText: string;
+  answerText: string;
+  points: number;
+}
+
 // Game state interface
 export interface GameState {
   playerBalance: number;
@@ -101,6 +114,12 @@ export interface GameState {
   matchCounts: { crown: number; bag: number; coin: number };
   matchWinningSymbol: MatchSymbol | null;
   matchPointsEarned: number;
+  // Jackpot state
+  jackpotCurrentQuestionIndex: number;
+  jackpotAnswers: JackpotAnswer[];
+  jackpotRevealedCount: number;
+  jackpotIsRevealPhase: boolean;
+  jackpotTotalPoints: number;
 }
 
 // Initial state
@@ -122,6 +141,11 @@ const initialState: GameState = {
   matchCounts: { crown: 0, bag: 0, coin: 0 },
   matchWinningSymbol: null,
   matchPointsEarned: 0,
+  jackpotCurrentQuestionIndex: 0,
+  jackpotAnswers: [],
+  jackpotRevealedCount: 0,
+  jackpotIsRevealPhase: false,
+  jackpotTotalPoints: 0,
 };
 
 // In-memory state (singleton pattern)
@@ -411,6 +435,87 @@ export function finishMatchRound(): number {
   
   notifyListeners();
   return points;
+}
+
+// Jackpot state management
+export function startJackpotRound(): void {
+  gameState = {
+    ...gameState,
+    jackpotCurrentQuestionIndex: 0,
+    jackpotAnswers: [],
+    jackpotRevealedCount: 0,
+    jackpotIsRevealPhase: false,
+    jackpotTotalPoints: 0,
+  };
+  notifyListeners();
+}
+
+export function recordJackpotAnswer(
+  questionText: string,
+  answerText: string,
+  points: number
+): void {
+  const newAnswers = [
+    ...gameState.jackpotAnswers,
+    { questionText, answerText, points },
+  ];
+  const newTotalPoints = gameState.jackpotTotalPoints + points;
+  const newQuestionIndex = gameState.jackpotCurrentQuestionIndex + 1;
+
+  gameState = {
+    ...gameState,
+    jackpotAnswers: newAnswers,
+    jackpotTotalPoints: newTotalPoints,
+    jackpotCurrentQuestionIndex: newQuestionIndex,
+  };
+  notifyListeners();
+}
+
+export function advanceJackpotQuestion(questionText: string): void {
+  // Called when timer expires - record 0 points for timeout
+  const newAnswers = [
+    ...gameState.jackpotAnswers,
+    { questionText, answerText: "(No answer)", points: 0 },
+  ];
+  const newQuestionIndex = gameState.jackpotCurrentQuestionIndex + 1;
+
+  gameState = {
+    ...gameState,
+    jackpotAnswers: newAnswers,
+    jackpotCurrentQuestionIndex: newQuestionIndex,
+  };
+  notifyListeners();
+}
+
+export function startJackpotReveal(): void {
+  gameState = {
+    ...gameState,
+    jackpotIsRevealPhase: true,
+    jackpotRevealedCount: 0,
+  };
+  notifyListeners();
+}
+
+export function revealNextJackpotAnswer(): number {
+  const newRevealedCount = gameState.jackpotRevealedCount + 1;
+  gameState = {
+    ...gameState,
+    jackpotRevealedCount: newRevealedCount,
+  };
+  notifyListeners();
+  return newRevealedCount;
+}
+
+export function finishJackpotRound(): { coinsEarned: number; isWinner: boolean } {
+  const totalPoints = gameState.jackpotTotalPoints;
+  const isWinner = totalPoints >= JACKPOT_WIN_THRESHOLD;
+  const coinsEarned = isWinner ? JACKPOT_PRIZE : 0;
+
+  if (coinsEarned > 0) {
+    addCoins(coinsEarned);
+  }
+
+  return { coinsEarned, isWinner };
 }
 
 // Reset game state
