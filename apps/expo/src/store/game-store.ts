@@ -5,12 +5,12 @@
 
 // Wedge configuration for the 16-wedge spin wheel
 // Uses weighted probability system (not based on wedge count)
-// 5 Coin + 5 Survey Says + 3 Destroy + 3 Survey Steal wedges
-// Probability: 60% coin, 15% destroy, 15% survey, 10% steal
+// 5 Coin + 4 Survey Says + 3 Destroy + 2 Survey Steal + 2 Match and Win wedges
+// Probability: 60% coin, 15% destroy, 10% survey, 10% match, 5% steal
 export interface WedgeConfig {
   id: number;
-  type: "survey" | "coin" | "steal" | "destroy";
-  value: number; // coin value (0 for survey/steal/destroy)
+  type: "survey" | "coin" | "steal" | "destroy" | "match";
+  value: number; // coin value (0 for survey/steal/destroy/match)
   label: string;
   color: string;
   textColor: string;
@@ -20,32 +20,33 @@ export interface WedgeConfig {
 // Wedges numbered CLOCKWISE from 12 o'clock (top)
 // 
 // Layout (clockwise from top):
-// 1-coin, 2-survey, 3-destroy, 4-steal, 5-coin, 6-survey, 7-destroy, 8-survey,
-// 9-coin, 10-steal, 11-coin, 12-survey, 13-destroy, 14-survey, 15-coin, 16-steal
+// 1-match, 2-coin, 3-survey, 4-destroy, 5-coin, 6-survey, 7-destroy, 8-coin,
+// 9-steal, 10-survey, 11-coin, 12-match, 13-coin, 14-survey, 15-destroy, 16-steal
 //
-// Coins ($): 5 wedges (ids: 0, 4, 8, 10, 14) - values $50-$200
-// Survey Says (?): 5 wedges (ids: 1, 5, 7, 11, 13)
-// Destroy: 3 wedges (ids: 2, 6, 12)
-// Survey Steal (Diamond): 3 wedges (ids: 3, 9, 15)
+// Coins ($): 5 wedges (ids: 1, 4, 7, 10, 12) - values $50-$200
+// Survey Says (?): 4 wedges (ids: 2, 5, 9, 13)
+// Destroy: 3 wedges (ids: 3, 6, 14)
+// Survey Steal (Diamond): 2 wedges (ids: 8, 15)
+// Match and Win (Triangle): 2 wedges (ids: 0, 11)
 //
 // Weighted Probability (ignores wedge count):
-// - Coins: 60%, Destroy: 15%, Survey Says: 15%, Survey Steal: 10%
+// - Coins: 60%, Destroy: 15%, Survey Says: 10%, Match: 10%, Survey Steal: 5%
 export const WEDGE_CONFIG: WedgeConfig[] = [
-  { id: 0, type: "coin", value: 50, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 1, type: "survey", value: 0, label: "?", color: "#5DADE2", textColor: "#FFFFFF" },
-  { id: 2, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
-  { id: 3, type: "steal", value: 0, label: "◆", color: "#FFFFFF", textColor: "#FFFFFF" },
+  { id: 0, type: "match", value: 0, label: "▲", color: "#48C9B0", textColor: "#FFFFFF" },
+  { id: 1, type: "coin", value: 50, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 2, type: "survey", value: 0, label: "?", color: "#5DADE2", textColor: "#FFFFFF" },
+  { id: 3, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
   { id: 4, type: "coin", value: 100, label: "$", color: "#8E7CC3", textColor: "#000000" },
   { id: 5, type: "survey", value: 0, label: "?", color: "#A569BD", textColor: "#FFFFFF" },
   { id: 6, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
-  { id: 7, type: "survey", value: 0, label: "?", color: "#9B59B6", textColor: "#FFFFFF" },
-  { id: 8, type: "coin", value: 150, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 9, type: "steal", value: 0, label: "◆", color: "#7B68EE", textColor: "#FFFFFF" },
+  { id: 7, type: "coin", value: 150, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 8, type: "steal", value: 0, label: "◆", color: "#7B68EE", textColor: "#FFFFFF" },
+  { id: 9, type: "survey", value: 0, label: "?", color: "#9B59B6", textColor: "#FFFFFF" },
   { id: 10, type: "coin", value: 75, label: "$", color: "#FFFFFF", textColor: "#000000" },
-  { id: 11, type: "survey", value: 0, label: "?", color: "#5B7FD9", textColor: "#FFFFFF" },
-  { id: 12, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
-  { id: 13, type: "survey", value: 0, label: "?", color: "#48C9B0", textColor: "#FFFFFF" },
-  { id: 14, type: "coin", value: 200, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 11, type: "match", value: 0, label: "▲", color: "#48C9B0", textColor: "#FFFFFF" },
+  { id: 12, type: "coin", value: 200, label: "$", color: "#FFFFFF", textColor: "#000000" },
+  { id: 13, type: "survey", value: 0, label: "?", color: "#5B7FD9", textColor: "#FFFFFF" },
+  { id: 14, type: "destroy", value: 0, label: "DESTROY", color: "#8B0000", textColor: "#FFFFFF" },
   { id: 15, type: "steal", value: 0, label: "◆", color: "#5DADE2", textColor: "#FFFFFF" },
 ];
 
@@ -69,6 +70,14 @@ export const DESTROY_CONSOLATION_PRIZE = 10;
 export const DESTROY_MIN_REWARD = 50;
 export const DESTROY_MAX_REWARD = 200;
 
+// Match and Win constants
+export const MATCH_CROWN_POINTS = 300;
+export const MATCH_BAG_POINTS = 200;
+export const MATCH_COIN_POINTS = 100;
+
+// Match symbol type
+export type MatchSymbol = "crown" | "bag" | "coin";
+
 // Game state interface
 export interface GameState {
   playerBalance: number;
@@ -87,6 +96,11 @@ export interface GameState {
   stealFailed: boolean;
   // Destroy state
   destroyCoinsEarned: number;
+  // Match and Win state
+  matchRevealedIndices: number[]; // indices (0-11) of cards that have been flipped
+  matchCounts: { crown: number; bag: number; coin: number };
+  matchWinningSymbol: MatchSymbol | null;
+  matchPointsEarned: number;
 }
 
 // Initial state
@@ -104,6 +118,10 @@ const initialState: GameState = {
   stealTotalPoints: 0,
   stealFailed: false,
   destroyCoinsEarned: 0,
+  matchRevealedIndices: [],
+  matchCounts: { crown: 0, bag: 0, coin: 0 },
+  matchWinningSymbol: null,
+  matchPointsEarned: 0,
 };
 
 // In-memory state (singleton pattern)
@@ -325,6 +343,74 @@ export function finishDestroyRound(coins: number): number {
     addCoins(coins);
   }
   return coins;
+}
+
+// Match and Win state management
+export function startMatchRound(): void {
+  gameState = {
+    ...gameState,
+    matchRevealedIndices: [],
+    matchCounts: { crown: 0, bag: 0, coin: 0 },
+    matchWinningSymbol: null,
+    matchPointsEarned: 0,
+  };
+  notifyListeners();
+}
+
+export function recordMatchFlip(
+  cardIndex: number,
+  symbol: MatchSymbol
+): { isWinner: boolean; winningSymbol: MatchSymbol | null } {
+  // Add the card index to revealed indices
+  const newRevealedIndices = [...gameState.matchRevealedIndices, cardIndex];
+  
+  // Update the count for this symbol
+  const newCounts = { ...gameState.matchCounts };
+  newCounts[symbol] = newCounts[symbol] + 1;
+  
+  // Check if this symbol has reached 3 matches
+  let isWinner = false;
+  let winningSymbol: MatchSymbol | null = null;
+  
+  if (newCounts[symbol] >= 3) {
+    isWinner = true;
+    winningSymbol = symbol;
+  }
+  
+  gameState = {
+    ...gameState,
+    matchRevealedIndices: newRevealedIndices,
+    matchCounts: newCounts,
+    matchWinningSymbol: winningSymbol,
+  };
+  
+  notifyListeners();
+  return { isWinner, winningSymbol };
+}
+
+export function finishMatchRound(): number {
+  // Calculate points based on winning symbol
+  let points = 0;
+  
+  if (gameState.matchWinningSymbol === "crown") {
+    points = MATCH_CROWN_POINTS;
+  } else if (gameState.matchWinningSymbol === "bag") {
+    points = MATCH_BAG_POINTS;
+  } else if (gameState.matchWinningSymbol === "coin") {
+    points = MATCH_COIN_POINTS;
+  }
+  
+  gameState = {
+    ...gameState,
+    matchPointsEarned: points,
+  };
+  
+  if (points > 0) {
+    addCoins(points);
+  }
+  
+  notifyListeners();
+  return points;
 }
 
 // Reset game state

@@ -13,29 +13,31 @@ To serve as the "Engine of Play," gamifying the transition between the home scre
 
 ## Functional Design Requirements
 * **Wedge Configuration (16 Total):**
-    * **3 Wedges: Destroy Mode** (Labeled "DESTROY").
-    * **3 Wedges: Survey Steal Mode** (Iconified with "Diamond").
-    * **5 Wedges: Survey Says Mode** (Iconified with "?").
-    * **5 Wedges: Instant Coin Rewards** (Iconified with "$").
+    * **5 Wedges: Instant Coins ($)**.
+    * **4 Wedges: Survey Says (?)**.
+    * **3 Wedges: Destroy Mode (DESTROY)**.
+    * **2 Wedges: Match and Win (Triangle)**.
+    * **2 Wedges: Survey Steal (Diamond)**.
+
 * **Routing Logic:**
-    * **If "Destroy":** Launch `looting.md` logic.
-    * **If "Survey Says":** Route to `survey_says.md`.
-    * **If "Survey Steal":** Route to `survey_steal.md`.
-    * **If "Coins":** Trigger instant balance update ($50 - $200 range).
+    * **If "Destroy":** Launch `looting.md`.
+    * **If "Survey Says":** Launch `survey_says.md`.
+    * **If "Match and Win":** Launch `match_and_win.md`.
+    * **If "Survey Steal":** Launch `survey_steal.md`.
+    * **If "Coins":** Trigger instant balance update.
 
 ## Balancing & Probability
-The system must ignore a simple 1/16 probability per wedge and instead use the following weights for the spin outcome:
+The RNG engine must select the **Outcome** first based on these target weights, then animate the wheel to a corresponding physical wedge:
 
-| Outcome | Wedge Count | Target Probability |
-| :--- | :--- | :--- |
-| **Instant Coins ($)** | 5 | $60\%$ |
-| **Destroy** | 3 | $15\%$ |
-| **Survey Says (?)** | 5 | $15\%$ |
-| **Survey Steal (Diamond)** | 3 | $10\%$ |
+| Outcome | Probability |
+| :--- | :--- |
+| **Instant Coins** | 60% |
+| **Destroy** | 15% |
+| **Survey Says** | 10% |
+| **Match and Win** | 10% |
+| **Survey Steal** | 5% |
 
 ## Technical Information
-* **Visual Persistence:** The wheel must store its `final_angle` and start subsequent spins from that position to maintain physical realism.
-* **Weighted Randomization:** The engine should pick the *Outcome* first based on the percentages above, then randomly select one of the corresponding physical wedges to stop on.
-* **State Management:**
-    * `current_rotation_angle`: Integer
-    * `active_mode`: [IDLE, DESTROY, SURVEY_SAYS, SURVEY_STEAL, COIN_REWARD]
+* **Asset Source:** `image_1fdae1.jpg`
+* **Weighted Randomization:** Result is determined by percentage weights, not 1/16 math.
+* **Visual Persistence:** Wheel must store `final_angle` and start subsequent spins from that position.

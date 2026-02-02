@@ -18,8 +18,12 @@ import {
   finishStealRound,
   startDestroyRound,
   finishDestroyRound,
+  startMatchRound,
+  recordMatchFlip,
+  finishMatchRound,
   resetGameState,
   type WedgeConfig,
+  type MatchSymbol,
 } from "./game-store";
 
 export function useGameStore() {
@@ -67,6 +71,12 @@ export function useGameStore() {
     finishStealRound: useCallback(() => finishStealRound(), []),
     startDestroyRound: useCallback(() => startDestroyRound(), []),
     finishDestroyRound: useCallback((coins: number) => finishDestroyRound(coins), []),
+    startMatchRound: useCallback(() => startMatchRound(), []),
+    recordMatchFlip: useCallback(
+      (cardIndex: number, symbol: MatchSymbol) => recordMatchFlip(cardIndex, symbol),
+      []
+    ),
+    finishMatchRound: useCallback(() => finishMatchRound(), []),
     resetGameState: useCallback(() => resetGameState(), []),
   };
 
